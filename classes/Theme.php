@@ -15,7 +15,8 @@ class Theme
                  'caption'
              ])
              ->addStyle('styles',  get_stylesheet_uri())
-             ->addCommentScript();
+             ->addCommentScript()
+             ->pingbackHeader();
 	}
 
 	private function addAction( $tag, $function_to_add, $priority = 10, $accepted_args = 1 ) {
@@ -29,16 +30,13 @@ class Theme
 		);
 	}
 
-	private function addFilter( $tag, $function_to_add, $priority = 10, $accepted_args = 1 ) {
-		add_filter(
-			$tag,
-			function() use ( $function_to_add ) {
-            	$function_to_add();
-			},
-			$priority,
-			$accepted_args
-		);
-	}
+    private function pingbackHeader() {
+        $this->addAction( 'wp_head', function() {
+            if ( is_singular() && pings_open() ) {
+                printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+            }
+        } );
+    }
 
     public function addSupport( $feature, $options = null ) {
         $this->addAction( 'after_setup_theme', function() use ( $feature, $options ) {
@@ -170,5 +168,5 @@ class Theme
 		$this->addAction( 'widgets_init', function() use ($args) {
 			register_sidebar( $args );
 		} );
-	}
+    }
 }
