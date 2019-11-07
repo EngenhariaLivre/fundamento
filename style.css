@@ -10,3 +10,43 @@ License URI: LICENSE
 Text Domain: engenharia-livre
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+#page {}
+
+.site {}
+
+.skip-link {}
+
+.screen-reader-text {}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#masthead {}
+
+.site-header {}
+
+.site-branding {}
+
+.site-title {}
+
+.site-description {}
+
+/*--------------------------------------------------------------
+## Menu
+--------------------------------------------------------------*/
+
+#site-navigation {}
+
+.main-navigation {}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+#content {}
+
+.site-content {}
