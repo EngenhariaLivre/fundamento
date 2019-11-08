@@ -18,6 +18,11 @@ if ( have_posts() ) :
 		 */
 		// get_template_part( 'article', get_post_type() );
 		template( 'article' );
+
+		if ( is_singular() && (comments_open() || get_comments_number()) ) :
+			comments_template();
+		endif;
+
 	endwhile;
 		the_posts_navigation();
 else :

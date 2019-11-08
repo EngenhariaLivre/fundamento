@@ -490,9 +490,6 @@ a:active {
 
 .page-title {}
 
-/*--------------------------------------------------------------
-## Content
---------------------------------------------------------------*/
 #secondary {}
 
 .widget-area {}
@@ -540,6 +537,62 @@ a:active {
 .comments-link {}
 
 .edit-link {}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+#comments {}
+
+.no-comments {}
+
+.comments-area {}
+
+.comments-title {}
+
+.comment-list {}
+
+.comment {}
+
+.comment-body {}
+
+.comment-meta {}
+
+.comment-author {}
+
+.avatar {}
+
+.comment-author .fn {}
+
+.comment-author .says {}
+
+.comment-metadata {}
+
+.comment-content {}
+
+.reply {}
+
+.comment-reply-link {}
+
+.comment-respond {}
+
+.comment-reply-title {}
+
+.comment-form {}
+
+.logged-in-as {}
+
+.comment-form-comment {}
+
+.comment-form-author {}
+
+.comment-form-email {}
+
+.comment-form-url {}
+
+.comment-form-cookies-consent {}
+
+.form-submit {}
 
 /*--------------------------------------------------------------
 # Footer
