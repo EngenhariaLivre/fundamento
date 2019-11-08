@@ -3,8 +3,9 @@
  * Setup the theme
  */
 require get_template_directory() . '/classes/Theme.php';
+require get_template_directory() . '/classes/CommentWalker.php';
 
-$theme = new Theme();
+$theme = new EngenhariaLivre\Theme();
 $theme->addNavMenus( [
 	'menu-1' => esc_html__( 'Primary', 'engenharia-livre' ),
 ] );
@@ -143,3 +144,14 @@ function engenharia_livre_post_thumbnail() {
 	<?php
 	endif; // End is_singular().
 }
+
+function pressfore_comment_time_output($date, $d, $comment){
+	return sprintf(
+		_x( '%s ago', '%s = human-readable time difference', 'engenharia-livre' ),
+		human_time_diff(
+			get_comment_time( 'U' ),
+			current_time( 'timestamp' )
+		)
+	);
+}
+add_filter('get_comment_date', 'pressfore_comment_time_output', 10, 3);

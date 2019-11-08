@@ -32,10 +32,12 @@ if ( have_comments() ) :
 
 	<ol class="comment-list">
 		<?php
-		wp_list_comments( array(
-			'style'      => 'ol',
-			'short_ping' => true,
-		) );
+		wp_list_comments( [
+			'style'       => 'ol',
+			'short_ping'  => true,
+			'avatar_size' => 48,
+			'walker'      => new EngenhariaLivre\CommentWalker
+		 ] );
 		?>
 	</ol><!-- .comment-list -->
 
