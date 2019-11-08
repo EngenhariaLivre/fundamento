@@ -7,6 +7,6 @@
 	endif;
 	
 	if ( 'post' === get_post_type() )
-		template( 'elements/meta' );
+		template( 'elements/entry-meta' );
 	?>
 </header><!-- .entry-header -->
