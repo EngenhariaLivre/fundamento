@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package EngenhariaLivre
+ * @package EngenhariaLivre\Fundamento
  */
 
 get_header();

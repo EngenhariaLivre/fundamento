@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package EngenhariaLivre
+ * @package EngenhariaLivre\Fundamento
  */
 
 if ( post_password_required() ) {
@@ -25,13 +25,13 @@ if ( have_comments() ) :
 		if ( '1' === $_s_comment_count ) {
 			printf(
 				/* translators: 1: title. */
-				esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'engenharia-livre' ),
+				esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'EngenhariaLivre\Fundamento' ),
 				'<span>' . esc_html( get_the_title() ) . '</span>'
 			);
 		} else {
 			printf( // phpcs:ignore Standard.Category.SniffName.ErrorCode
 				/* translators: 1: comment count number, 2: title. */
-				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $_s_comment_count, 'comments title', 'engenharia-livre' ) ),
+				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $_s_comment_count, 'comments title', 'EngenhariaLivre\Fundamento' ) ),
 				number_format_i18n( $_s_comment_count ),
 				'<span>' . esc_html( get_the_title() ) . '</span>'
 			);
@@ -47,7 +47,7 @@ if ( have_comments() ) :
 			'style'       => 'ol',
 			'short_ping'  => true,
 			'avatar_size' => 48,
-			'walker'      => new EngenhariaLivre\Walker_Comment(),
+			'walker'      => new EngenhariaLivre\Fundamento\Walker_Comment(),
 		) );
 		?>
 	</ol><!-- .comment-list -->
@@ -59,7 +59,7 @@ if ( have_comments() ) :
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() ) :
 		?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'engenharia-livre' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'EngenhariaLivre\Fundamento' ); ?></p>
 		<?php
 	endif;
 

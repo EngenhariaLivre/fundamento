@@ -2,7 +2,7 @@
 /**
  * The header template for a page or post
  *
- * @package EngenhariaLivre
+ * @package EngenhariaLivre\Fundamento
  */
 
 ?>
@@ -15,7 +15,7 @@
 	endif;
 	
 	if ( 'post' === get_post_type() ) {
-		engenharia_livre_template( 'elements/entry-meta' );
+		fundamento_template( 'elements/entry-meta' );
 	}
 	?>
 </header><!-- .entry-header -->

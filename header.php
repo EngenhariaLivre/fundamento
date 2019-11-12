@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package EngenhariaLivre
+ * @package EngenhariaLivre\Fundamento
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'engenharia-livre' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'EngenhariaLivre\Fundamento' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="header-wrapper">
@@ -53,7 +53,7 @@
 			<nav id="site-navigation" class="main-navigation">
 				<button 
 					class="hamburger hamburger--spin menu-toggle"
-					aria-label="<?php esc_html_e( 'Menu', 'engenharia-livre' ); ?>"
+					aria-label="<?php esc_html_e( 'Menu', 'EngenhariaLivre\Fundamento' ); ?>"
 					aria-controls="site-links"
 					aria-expanded="false"
 				>

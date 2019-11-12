@@ -1,21 +1,21 @@
 {
-	"name": "twentytwenty",
+	"name": "fundamento",
 	"version": "1.0.0",
-	"description": "Default WP Theme",
-	"author": "The WordPress Contributors",
+	"description": "Engenharia Livre default theme",
+	"author": "Douglas Moura",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"WordPress",
 		"Theme",
-		"TwentyTwenty"
+		"Engenharia Livre"
 	],
-	"homepage": "https://github.com/wordpress/twentytwenty#readme",
+	"homepage": "https://github.com/EngenhariaLivre/fundamento#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/wordpress/twentytwenty.git"
+		"url": "git+https://github.com/EngenhariaLivre/fundamento.git"
 	},
 	"bugs": {
-		"url": "https://github.com/wordpress/twentytwenty/issues"
+		"url": "https://github.com/EngenhariaLivre/fundamento/issues"
 	},
 	"devDependencies": {
 		"@wordpress/browserslist-config": "^2.6.0",

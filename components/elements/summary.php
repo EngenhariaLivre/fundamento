@@ -2,7 +2,7 @@
 /**
  * The sumary template for a page or post
  *
- * @package EngenhariaLivre
+ * @package EngenhariaLivre\Fundamento
  */
 
 ?>

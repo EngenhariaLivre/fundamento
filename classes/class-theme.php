@@ -2,11 +2,11 @@
 /**
  * Theme Setup
  *
- * @package EngenhariaLivre
+ * @package EngenhariaLivre\Fundamento
  * @since 1.0.0
  */
 
-namespace EngenhariaLivre;
+namespace EngenhariaLivre\Fundamento;
 
 /**
  * Enable a faster WordPress theme setup.
@@ -294,7 +294,7 @@ class Theme {
 	public function content_width( $width = 640 ) {
 		$this->add_action( 'after_setup_theme',
 			function() use ( $width ) {
-				$GLOBALS['content_width'] = apply_filters( 'engenharia_livre_content_width', $width );
+				$GLOBALS['content_width'] = apply_filters( 'EngenhariaLivre\Fundamento_content_width', $width );
 			},
 			0
 		);

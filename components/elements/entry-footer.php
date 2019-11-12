@@ -2,10 +2,10 @@
 /**
  * The footer template for a page or post
  *
- * @package EngenhariaLivre
+ * @package EngenhariaLivre\Fundamento
  */
 
 ?>
 <footer class="entry-footer">
-	<?php engenharia_livre_entry_footer(); ?>
+	<?php fundamento_entry_footer(); ?>
 </footer><!-- .entry-footer -->
