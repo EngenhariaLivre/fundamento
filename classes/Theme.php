@@ -4,10 +4,15 @@ namespace EngenhariaLivre;
 
 class Theme {
 	public function __construct() {
-		$this->addSupport('title-tag')
-			 ->addSupport('custom-logo')
-			 ->addSupport('post-thumbnails')
-			 ->addSupport('customize-selective-refresh-widgets')
+		$this->addSupport( 'title-tag' )
+			 ->addSupport( 'custom-logo', [
+				'header-text' => [
+					'site-title',
+					'site-description'
+				]
+			 ] )
+			 ->addSupport( 'post-thumbnails' )
+			 ->addSupport( 'customize-selective-refresh-widgets' )
 			 ->addSupport('html5', [
 				 'search-form',
 				 'comment-form',
@@ -15,7 +20,7 @@ class Theme {
 				 'gallery',
 				 'caption'
 			 ])
-			 ->addStyle('styles',  get_stylesheet_uri())
+			 ->addStyle( 'styles',  get_stylesheet_uri() )
 			 ->addCommentScript()
 			 ->pingbackHeader();
 	}
@@ -41,7 +46,7 @@ class Theme {
 
 	public function addSupport( $feature, $options = null ) {
 		$this->addAction( 'after_setup_theme', function() use ( $feature, $options ) {
-			if ($options){
+			if ( $options ){
 				add_theme_support( $feature, $options );
 			} else {
 				add_theme_support( $feature );
@@ -82,7 +87,7 @@ class Theme {
 		return $this;
 	}
 
-	public function addStyle( $handle,  $src = '',  $deps = array(), $ver = false, $media = 'all' ) {
+	public function addStyle( $handle,  $src = '',  $deps = [], $ver = false, $media = 'all' ) {
 		$this->addAction( 'wp_enqueue_scripts', function() use ( $handle, $src, $deps, $ver, $media ){
 			wp_enqueue_style( $handle,  $src,  $deps, $ver, $media );
 		} );
@@ -90,7 +95,8 @@ class Theme {
 		return $this;
 	}
 
-	public function addScript( $handle,  $src = '',  $deps = array(), $ver = false, $in_footer = false ) {
+	// $in_footer is setted to true by default
+	public function addScript( $handle,  $src = '',  $deps = [], $ver = false, $in_footer = true ) {
 		$this->addAction( 'wp_enqueue_scripts', function() use ($handle, $src, $deps, $ver, $in_footer ){
 			wp_enqueue_script( $handle,  $src,  $deps, $ver, $in_footer );
 		} );
@@ -126,7 +132,7 @@ class Theme {
 		return $this;
 	}
 
-	public function addNavMenus( $locations = array() ) {
+	public function addNavMenus( $locations = [] ) {
 		$this->addAction( 'after_setup_theme', function() use ($locations){
 			register_nav_menus( $locations );
 		} );

@@ -15,6 +15,28 @@ $theme->widget([
 	'id'            => 'sidebar-1',
 	'description'   => esc_html__( 'Add widgets here.', 'engenharia-livre' ),
 ]);
+$theme->widget([
+	'name'          => esc_html__( 'Menu - column 1', 'engenharia-livre' ),
+	'id'            => 'menu-1',
+	'description'   => esc_html__( 'Add widgets here.', 'engenharia-livre' ),
+	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</aside>',
+]);
+$theme->widget([
+	'name'          => esc_html__( 'Menu - column 2', 'engenharia-livre' ),
+	'id'            => 'menu-2',
+	'description'   => esc_html__( 'Add widgets here.', 'engenharia-livre' ),
+	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</aside>',
+]);
+$theme->widget([
+	'name'          => esc_html__( 'Menu - column 3', 'engenharia-livre' ),
+	'id'            => 'menu-3',
+	'description'   => esc_html__( 'Add widgets here.', 'engenharia-livre' ),
+	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</aside>',
+]);
+$theme->addScript( 'engenharia-livre-scripts', get_template_directory_uri() . '/assets/js/scripts.js' );
 
 function engenharia_livre_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
@@ -29,7 +51,7 @@ function engenharia_livre_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'engenharia_livre_body_classes' );
 
-function template( $file ) {
+function  engenharia_livre_template( $file ) {
 	include( locate_template( 'components/' . $file . '.php' ) );
 }
 
@@ -118,26 +140,38 @@ function engenharia_livre_entry_footer() {
 	);
 }
 
+function engenharia_livre_featured_image( $size = 'post-thumbnail', $attr = '' ) {
+	if ( has_post_thumbnail() ) :
+		the_post_thumbnail( $size, $attr );
+	else :
+?>
+	<div class="no-thumbnail">
+	</div>
+<?php
+	endif;
+}
+
 function engenharia_livre_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+	if ( post_password_required() || is_attachment() ) {
 		return;
 	}
 	if ( is_singular() ) :
+		// TODO: Change this div below to a <figure>
 		?>
 
 		<div class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
+			<?php engenharia_livre_featured_image(); ?>
 		</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php
-		the_post_thumbnail( 'post-thumbnail', array(
-			'alt' => the_title_attribute( array(
+		engenharia_livre_featured_image( 'post-thumbnail', [
+			'alt' => the_title_attribute( [
 				'echo' => false,
-			) ),
-		) );
+			] ),
+		] );
 		?>
 	</a>
 
@@ -145,7 +179,7 @@ function engenharia_livre_post_thumbnail() {
 	endif; // End is_singular().
 }
 
-function pressfore_comment_time_output($date, $d, $comment){
+function engenharia_livre_comment_time_output( $date, $d, $comment ){
 	return sprintf(
 		_x( '%s ago', '%s = human-readable time difference', 'engenharia-livre' ),
 		human_time_diff(
@@ -154,4 +188,4 @@ function pressfore_comment_time_output($date, $d, $comment){
 		)
 	);
 }
-add_filter('get_comment_date', 'pressfore_comment_time_output', 10, 3);
+add_filter( 'get_comment_date', 'engenharia_livre_comment_time_output', 10, 3 );

@@ -17,7 +17,7 @@ if ( have_posts() ) :
 		 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 		 */
 		// get_template_part( 'article', get_post_type() );
-		template( 'article' );
+		engenharia_livre_template( 'article' );
 
 		if ( is_singular() && (comments_open() || get_comments_number()) ) :
 			comments_template();

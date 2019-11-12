@@ -7,6 +7,6 @@
 	endif;
 	
 	if ( 'post' === get_post_type() )
-		template( 'elements/entry-meta' );
+		engenharia_livre_template( 'elements/entry-meta' );
 	?>
 </header><!-- .entry-header -->
