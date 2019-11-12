@@ -1,21 +1,32 @@
+<?php
+/**
+ * The template for displaying content
+ *
+ * This is the template that displays the content of a page or post
+ * for any singular page.
+ *
+ * @package EngenhariaLivre
+ */
+
+?>
 <div class="entry-content">
 	<?php
 	the_content( sprintf(
 		wp_kses(
 			/* translators: %s: Name of current post. Only visible to screen readers */
-			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s' ),
-			[
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'engenharia-livre' ),
+			array(
 				'span' => array(
 					'class' => array(),
 				),
-			]
+			)
 		),
 		get_the_title()
 	) );
 
-	wp_link_pages( [
-		'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
+	wp_link_pages( array(
+		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'engenharia-livre' ),
 		'after'  => '</div>',
-	] );
+	) );
 	?>
 </div>

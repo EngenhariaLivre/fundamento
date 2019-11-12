@@ -1,3 +1,15 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package EngenhariaLivre
+ */
+
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -21,21 +33,21 @@
 				}
 				
 				if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-					else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
-				$_s_description = get_bloginfo( 'description', 'display' );
-				
-				if ( $_s_description || is_customize_preview() ) :
-					/** TODO: remove text description with Theme Customization API */
 					?>
-				<p class="site-description screen-reader-text"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
-				<?php endif; ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+					else :
+						?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+				endif;
+					$_s_description = get_bloginfo( 'description', 'display' );
+				
+					if ( $_s_description || is_customize_preview() ) :
+						/** TODO: remove text description with Theme Customization API */
+						?>
+				<p class="site-description screen-reader-text"><?php echo $_s_description; /* phpcs:ignore */ ?></p>
+					<?php endif; ?>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">
@@ -46,22 +58,22 @@
 					aria-expanded="false"
 				>
 					<span class="hamburger-box">
-      					<span class="hamburger-inner"></span>
-    				</span>
+						<span class="hamburger-inner"></span>
+					</span>
 				</button>
 				<div class="site-links is-not-active">
 				<?php
-					wp_nav_menu( [
-						'container_class' => false, // Must be the same id as aria-controls int the button above
+					wp_nav_menu( array(
+						'container_class' => false, // Must be the same id as aria-controls int the button above.
 						'depth'           => 1,
 						'menu_id'         => 'primary-menu',
 						'theme_location'  => 'menu-1',
-					] );
+					) );
 
 					dynamic_sidebar( 'menu-1' );
 					dynamic_sidebar( 'menu-2' );
 					dynamic_sidebar( 'menu-3' );
-				?>
+					?>
 				</div>
 			</nav><!-- #site-navigation -->
 		</div>

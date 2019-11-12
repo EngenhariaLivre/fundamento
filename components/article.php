@@ -1,5 +1,13 @@
 <?php
-$content = is_singular() ? 'content': 'summary';
+/**
+ * The content template for a page or post
+ *
+ * @package EngenhariaLivre
+ */
+
+?>
+<?php
+$content = is_singular() ? 'content' : 'summary';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php

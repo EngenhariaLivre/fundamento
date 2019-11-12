@@ -1,3 +1,11 @@
+<?php
+/**
+ * The 404/no results template
+ *
+ * @package EngenhariaLivre
+ */
+
+?>
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'engenharia-livre' ); ?></h1>
