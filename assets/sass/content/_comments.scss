@@ -1,0 +1,161 @@
+.comments-area {
+	border-top: 2px solid #ccc;
+}
+
+#comments ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.comment {
+	padding: 1em 0;
+}
+
+.comment-author.vcard {
+	display: flex;
+}
+
+.comment-meta a {
+	color: #222;
+}
+
+.comment-metadata {
+	font-size: 12rem;
+	margin-left: 1em;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.bull {
+	display: inline-block;
+	margin: 0 0.5em;
+}
+
+.edit-link a {
+	background: #f0f2f4;
+	color: #777;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 11rem;
+	padding: 3px 5px;
+	border-radius: 3px;
+}
+
+.edit-link a:hover {
+	background: tomato;
+	color: #fff;
+}
+
+.comment-metadata .edit-link a {
+	margin: 0 1em;
+}
+
+.says {
+	display: none;
+}
+
+.comment-author .avatar {
+	border-radius: 3px;
+}
+
+.comment-content {
+	margin: 1.5em 0 0 1em;
+	padding: 1em;
+	background: #f0f2f4;
+	position: relative;
+}
+
+.comment-content::before {
+	content: '';
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #f0f2f4;
+	position: absolute;
+	top: -20px;
+	left: 0;
+}
+
+.bypostauthor .comment-content {
+	background: lightyellow;
+}
+
+.bypostauthor .comment-content::before {
+	border-bottom: 20px solid lightyellow;
+}
+
+.reply {
+	text-transform: uppercase;
+	font-size: 12rem;
+	/*border-bottom: 1px solid #a9b4c0;*/
+	display: flex;
+}
+
+.comment-reply-link {
+	padding: 3px 5px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-weight: bold;
+	margin-left: auto;
+}
+
+.comment-reply-link:hover {
+	background: tomato;
+	color: #fff;
+}
+
+#comments ol.children {
+	margin-left: 1.4em;
+}
+
+.children .avatar {
+	height: 32px;
+	width: 32px;
+}
+
+.comment-respond label {
+	font-weight: bold;
+	display: inline-block;
+	width: 80px;
+}
+
+.required {
+	color: tomato;
+}
+
+.comment-form-cookies-consent label {
+	width: auto;
+	padding-left: 1em;
+	font-weight: normal;
+}
+
+.comment-reply-title {}
+
+.comment-form {}
+
+.logged-in-as {
+	background: lightyellow;
+	padding: 0.75em;
+	border-radius: 5px;
+	font-size: 14rem;
+	border: 3px solid yellow;
+}
+
+.comment-form-comment textarea {
+	display: block;
+	width: 100%;
+}
+
+.comment-form-comment label {
+	display: none;
+}
+
+.comment-form-author {}
+
+.comment-form-email {}
+
+.comment-form-url {}
+
+.comment-form-cookies-consent {}
+
+.form-submit {}

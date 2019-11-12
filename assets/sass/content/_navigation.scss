@@ -1,0 +1,138 @@
+.main-navigation {
+	display: flex;
+	position: relative;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+	background: #424655;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li.focus>ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover>ul,
+.main-navigation ul li.focus>ul {
+	left: auto;
+}
+
+.main-navigation li {
+	/*float: left;*/
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	/*display: block;*/
+	position: absolute;
+	z-index: 100;
+	height: 64px;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		/*display: none;*/
+	}
+
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-links {
+	margin-top: 74px;
+	width: 100%;
+	max-width: 1024px;
+	display: flex;
+	overflow: hidden;
+	z-index: 999;
+	border-radius: 3px;
+}
+
+.site-links.is-not-active {
+	max-height: 0;
+	pointer-events: none;
+	transition: max-height 1s ease-in-out;
+}
+
+.site-links.is-active {
+	max-height: 600px;
+	transition: max-height 1s ease-in-out;
+}
+
+.is-not-active.site-links::before {
+	display: none;
+}
+
+.site-links::before {
+	content: '';
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #373a47;
+	position: absolute;
+	margin-top: -9px;
+	left: 22px;
+}
+
+.site-links,
+.site-links ul {
+	background: #373a47;
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.625;
+}
+
+.site-links ul {
+	padding: 1em;
+}
+
+.site-links li {
+	border-left: 3px solid #fff;
+}
+
+.site-links a {
+	color: #fff;
+	padding: 8px 16px;
+}
+
+.site-links a:hover {
+	color: #00b9eb;
+}
+
+.site-links li:hover {
+	background: #424655;
+	border-color: #00b9eb;
+}
+
+.site-links .widget-title {
+	display: none;
+}

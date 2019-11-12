@@ -1,0 +1,29 @@
+.site-header {
+	background: #5eb95e;
+	color: #fff;
+	height: 64px;
+	line-height: 64px;
+	/*border-bottom: 3px solid #47a547;*/
+}
+
+.site-header .menu-toggle {
+	line-height: auto;
+}
+
+.site-header p {
+	margin: 0;
+}
+
+.header-wrapper {
+	display: flex;
+	max-width: 1024px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.site-branding {}
+
+.site-title {}
+
+.site-description {}
