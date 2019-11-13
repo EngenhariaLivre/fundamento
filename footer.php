@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,27 +12,36 @@
 
 ?>
 
-		</div>
-	</div><!-- #content -->
+</div><!-- .container -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer">
+	<div class="container">
+		<?php
+			dynamic_sidebar( 'footer-1' );
+			dynamic_sidebar( 'footer-2' );
+			dynamic_sidebar( 'footer-3' );
+			dynamic_sidebar( 'footer-4' );
+		?>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'EngenhariaLivre\Fundamento' ) ); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'EngenhariaLivre\Fundamento' ), 'WordPress' );
-			?>
+			<a href="<?php echo esc_url(__('https://wordpress.org/', 'EngenhariaLivre\Fundamento')); ?>">
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf(esc_html__('Proudly powered by %s', 'EngenhariaLivre\Fundamento'), 'WordPress');
+				?>
 			</a>
 			<span class="sep"> | </span>
 			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'EngenhariaLivre\Fundamento' ), 'EngenhariaLivre\Fundamento', '<a href="https://douglasdemoura.github.io/">Douglas Moura</a>' );
+			/* translators: 1: Theme name, 2: Theme author. */
+			printf(esc_html__('Theme: %1$s by %2$s.', 'EngenhariaLivre\Fundamento'), 'EngenhariaLivre\Fundamento', '<a href="https://douglasdemoura.github.io/">Douglas Moura</a>');
 			?>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</div><!-- .container -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

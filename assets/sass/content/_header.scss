@@ -1,5 +1,5 @@
 .site-header {
-	background: #5eb95e;
+	background: $green;
 	color: #fff;
 	height: 64px;
 	line-height: 64px;
@@ -14,16 +14,23 @@
 	margin: 0;
 }
 
-.header-wrapper {
+.header-container {
 	display: flex;
-	max-width: 1024px;
-	width: 100%;
-	margin: 0 auto;
 	padding: 0 1em;
 }
 
-.site-branding {}
+.site-branding {
+	.site-title a {
+		visibility: hidden;
+		color: $white;
+		font-weight: bold;
 
-.site-title {}
+		&:hover {
+			background: rgba(0, 0, 0, 0.2);
+		}
+	}
 
-.site-description {}
+	.site-description {
+		@extend .screen-reader-text;
+	}
+}

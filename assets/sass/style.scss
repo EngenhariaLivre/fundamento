@@ -10,7 +10,9 @@ License URI: LICENSE
 Text Domain: engenharia-livre
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+@import "https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap";
 @import "variables";
+@import "mixins/mixins-master";
 /*--------------------------------------------------------------
 # Reset
 --------------------------------------------------------------*/
@@ -20,6 +22,8 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 # Elements
 --------------------------------------------------------------*/
 @import "base/elements";
+
+@import "base/tables";
 
 /*--------------------------------------------------------------
 # Forms
@@ -84,4 +88,10 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-@import "content/widgets";
+@import "content/footer";
+
+
+/*--------------------------------------------------------------
+# WordPres
+--------------------------------------------------------------*/
+@import "content/wordpress";

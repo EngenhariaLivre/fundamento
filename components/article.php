@@ -5,8 +5,6 @@
  * @package EngenhariaLivre\Fundamento
  */
 
-?>
-<?php
 $content = is_singular() ? 'content' : 'summary';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -1,7 +1,21 @@
-#colophon {}
+.site-footer {
+    background: $darkblue;
+    color: #fff;
+    margin-top: 2em;
 
-.site-footer {}
+    a {
+        color: #fff;
 
-.site-info {}
+        &:hover {
+            color: $blue;
+        }
+    }
 
-.sep {}
+    .container {
+        padding: 1em;
+    }
+}
+
+.site-info {
+    @extend .screen-reader-text;
+}

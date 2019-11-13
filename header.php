@@ -25,7 +25,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'EngenhariaLivre\Fundamento' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="header-wrapper">
+		<div class="header-container container">
 			<div class="site-branding">
 				<?php
 				if ( has_custom_logo() ) {
@@ -46,7 +46,7 @@
 					if ( $_s_description || is_customize_preview() ) :
 						/** TODO: remove text description with Theme Customization API */
 						?>
-				<p class="site-description screen-reader-text"><?php echo $_s_description; /* phpcs:ignore */ ?></p>
+				<p class="site-description"><?php echo $_s_description; /* phpcs:ignore */ ?></p>
 					<?php endif; ?>
 			</div><!-- .site-branding -->
 
@@ -80,4 +80,4 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<div class="wrapper">
+		<div class="container">

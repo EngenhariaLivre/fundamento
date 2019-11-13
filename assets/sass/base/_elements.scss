@@ -53,8 +53,8 @@ ol {
 	list-style: decimal;
 }
 
-li>ul,
-li>ol {
+li > ul,
+li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -85,4 +85,45 @@ html {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+
+blockquote {
+	background: $lightgrey;
+	margin: 0;
+	padding: 1em 1em 1em 2.3em;
+	border-radius: 3px;
+	position: relative;
+
+	&::before,
+	&::after {
+		position: absolute;
+		font-size: 3em;
+		line-height: 1;
+	}
+
+	&::before {
+		content: open-quote;
+		top: 10px;
+		left: 10px;
+	}
+
+	&::after {
+		content: close-quote;
+		bottom: -0.4em;
+		right: 10px;
+	}
+
+	cite {
+		display: block;
+		margin-top: 2em;
+		text-align: right;
+	}
+}
+body {
+	background: #f6f6f6;
+}
+
+.container {
+	max-width: $size__max-width;
+	margin: 0 auto;
 }

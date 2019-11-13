@@ -1,0 +1,51 @@
+table tr th {
+	text-align: center;
+    font-weight: bold;
+    text-align: left;
+    font-size: 110%;
+    border-bottom: 2px solid;
+}
+
+table tr td.rightright {
+	background: #eee;
+}
+
+table tr td h4 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+table {
+	margin-bottom: 2em;
+    width: 100%;
+    border-bottom: 2px solid;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+}
+
+caption,
+th,
+td {
+	padding: 0.5em 1em 0.5em 0;
+}
+
+caption {
+	background: #f1f1f1;
+	padding: 1em 0;
+	margin-bottom: 1em;
+}
+
+tr,
+td,
+th {
+	vertical-align: middle;
+}
+
+/* Use this if you use span-x classes on th/td. */
+table .last {
+	padding-right: 0;
+}

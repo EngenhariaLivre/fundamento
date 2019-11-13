@@ -14,8 +14,27 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<span id="comments-link" class="comments-link">
+	<?php
+		comments_popup_link(
+			sprintf(
+				wp_kses(
+					/* translators: %s: post title */
+					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'fundamento' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			)
+		);
+	?>
+</span>
 
-<div id="comments" class="comments-area">
+
+<div id="comments" class="comments-area is-not-active" aria-expanded="false">
 <?php
 if ( have_comments() ) :
 	?>

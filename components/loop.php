@@ -28,12 +28,13 @@ if ( have_posts() ) :
 
 		fundamento_template( 'article' );
 
+		fundamento_post_navigation();
+
 		if ( is_singular() && ( comments_open() || get_comments_number() ) ) :
 			comments_template();
 		endif;
 
 	endwhile;
-		the_posts_navigation();
 else :
 	get_template_part( 'content-none' );
 endif;
