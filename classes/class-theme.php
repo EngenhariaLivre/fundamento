@@ -14,6 +14,15 @@ namespace EngenhariaLivre\Fundamento;
 class Theme {
 
 	/**
+	 * Custom user fields.
+	 */
+	private $user_fields = array(
+		'Facebook',
+		'Twitter',
+		'Instagram',
+	);
+
+	/**
 	 * Constructs the object with the the necessary calls.
 	 */
 	public function __construct() {

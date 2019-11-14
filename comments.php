@@ -44,13 +44,13 @@ if ( have_comments() ) :
 		if ( '1' === $_s_comment_count ) {
 			printf(
 				/* translators: 1: title. */
-				esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'EngenhariaLivre\Fundamento' ),
+				esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'fundamento' ),
 				'<span>' . esc_html( get_the_title() ) . '</span>'
 			);
 		} else {
 			printf( // phpcs:ignore Standard.Category.SniffName.ErrorCode
 				/* translators: 1: comment count number, 2: title. */
-				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $_s_comment_count, 'comments title', 'EngenhariaLivre\Fundamento' ) ),
+				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $_s_comment_count, 'comments title', 'fundamento' ) ),
 				number_format_i18n( $_s_comment_count ),
 				'<span>' . esc_html( get_the_title() ) . '</span>'
 			);
@@ -78,7 +78,7 @@ if ( have_comments() ) :
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() ) :
 		?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'EngenhariaLivre\Fundamento' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'fundamento' ); ?></p>
 		<?php
 	endif;
 

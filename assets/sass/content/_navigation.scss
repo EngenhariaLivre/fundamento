@@ -141,6 +141,9 @@
 			padding: 1em;
 			background: $lightgrey;
 			color: #777;
+			border-radius: 3px;
+			border: 1px solid $grey;
+			margin: 0 1em;
 
 			&:hover {
 				background: darken($lightgrey, 5%);

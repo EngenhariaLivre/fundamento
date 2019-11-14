@@ -13,5 +13,6 @@ $content = is_singular() ? 'content' : 'summary';
 		fundamento_post_thumbnail();
 		fundamento_template( 'elements/' . $content );
 		fundamento_template( 'elements/entry-footer' );
+		fundamento_template( 'elements/author-data' );
 	?>
 </article><!-- #post-<?php the_ID(); ?> -->

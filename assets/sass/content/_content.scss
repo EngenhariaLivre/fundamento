@@ -213,3 +213,78 @@
 		}
 	}
 }
+
+.author-box {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	padding: 1em;
+	background: $lightgrey;
+	margin: 0 1em 1em 1em;
+	border-radius: 3px;
+	border: 1px solid $grey;
+
+	a {
+		&.author-more {
+			text-transform: uppercase;
+			font-size: small;
+			font-weight: bold;
+			color: $red;
+		}
+
+		&:hover.author-more {
+			color: darken($red, 15%);
+		}
+
+		&.author-social-link {
+			margin-top: 1em;
+			display: inline-block;
+		}
+
+		&:hover.author-social-link {
+			&.facebook {
+				svg {
+					fill: $facebook;
+				}
+			}
+
+			&.twitter {
+				svg {
+					fill: $twitter;
+				}
+			}
+
+			&.instagram {
+				svg {
+					fill: $instagram;
+				}
+			}
+
+			&.linkedin {
+				svg {
+					fill: $linkedin;
+				}
+			}
+		}
+	}
+
+	.author-data {
+		padding-right: 1em;
+		font-size: small;
+
+		h3 {
+			margin: 0;
+		}
+	}
+
+	.author-avatar {
+		min-width: 175px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			border-radius: 50%;
+		}
+	}
+}

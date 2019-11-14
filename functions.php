@@ -418,3 +418,113 @@ function fundamento_get_theme_svg( $svg_name, $group = 'ui', $color = '' ) {
 	}
 	return $svg;
 }
+
+/**
+ * Defines custom fields for all users.
+ *
+ * @return array $fields Array of custom user contact info fields.
+ */
+function fundamento_user_custom_fields() {
+	return array(
+		'facebook'  => __( 'Facebook', 'fundamento' ),
+		'twitter'   => __( 'Twitter', 'fundamento' ),
+		'instagram' => __( 'Instagram', 'fundamento' ),
+		'linkedin'  => __( 'LinkedIn', 'fundamento' ),
+	);
+}
+
+/**
+ * Removes legacy contact fields and adds support for Facebook, Twitter, Instagram and LinkedIn.
+ *
+ * @param array $fields  Array of default contact fields.
+ * @return array $fields Amended array of contact fields.
+ */
+function fundamento_custom_contact_info( $fields ) {
+	// Remove the old, unused fields.
+    unset( $fields['aim'] );
+    unset( $fields['yim'] );
+	unset( $fields['jabber'] );
+	
+	// Adds custom contact fields.
+	foreach ( fundamento_user_custom_fields() as $key => $value ) {
+		$fields[$key] = $value;
+	}
+     
+    // Return the amended contact fields.
+    return $fields;
+}
+
+add_filter( 'user_contactmethods', 'fundamento_custom_contact_info' );
+
+/**
+ * Return social links for the current author in the loop.
+ */
+function fundamento_author_contact_links() {
+	foreach ( fundamento_user_custom_fields() as $key => $value ) {
+		if ( get_the_author_meta( $key ) !== '' ) :
+		?>
+		<a href="<?php the_author_meta( $key ) ?>" class="author-social-link <?php echo $key; ?>" title="<?php echo $value; ?>">
+			<span class="screen-reader-text"><?php echo $value; ?></span>
+			<?php fundamento_the_theme_svg( $key, 'social' ) ?>
+		</a>
+		<?php
+		endif;
+	}
+}
+
+/**
+ * Custom archive title.
+ */
+function fundamento_archive_title() {
+
+	if ( is_singular() ) {
+		return;
+	}
+
+	$archive_title    = '';
+	$archive_subtitle = '';
+
+	if ( is_search() ) {
+		global $wp_query;
+
+		$archive_title = sprintf(
+			'%1$s %2$s',
+			'<span class="color-accent">' . __( 'Search:', 'fundamento' ) . '</span>',
+			'&ldquo;' . get_search_query() . '&rdquo;'
+		);
+
+		if ( $wp_query->found_posts ) {
+			$archive_subtitle = sprintf(
+				/* translators: %s: Number of search results */
+				_n(
+					'We found %s result for your search.',
+					'We found %s results for your search.',
+					$wp_query->found_posts,
+					'fundamento'
+				),
+				number_format_i18n( $wp_query->found_posts )
+			);
+		} else {
+			$archive_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'fundamento' );
+		}
+
+	} elseif ( ! is_home() ) {
+		$archive_title    = get_the_archive_title();
+		$archive_subtitle = get_the_archive_description();
+	}
+
+	if ( $archive_title || $archive_subtitle ) {
+		?>
+		<header class="archive-header has-text-align-center">
+			<div class="archive-header-inner">
+				<?php if ( $archive_title ) : ?>
+					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
+				<?php endif; ?>
+				<?php if ( $archive_subtitle ) : ?>
+					<div class="archive-subtitle"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
+				<?php endif; ?>
+			</div><!-- .archive-header-inner -->
+		</header><!-- .archive-header -->
+		<?php
+	}
+}

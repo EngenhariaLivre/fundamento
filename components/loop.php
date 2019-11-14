@@ -5,17 +5,10 @@
  * @package EngenhariaLivre\Fundamento
  */
 
-?>
-<?php
 if ( have_posts() ) :
-	if ( is_home() && ! is_front_page() ) :
-		?>
-	<header>
-		<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-	</header>
-		<?php
-	endif;
-	
+
+	fundamento_archive_title();
+
 	/* Start the Loop */
 	while ( have_posts() ) :
 		the_post();
@@ -39,5 +32,5 @@ if ( have_posts() ) :
 	fundamento_the_posts_navigation();
 
 else :
-	get_template_part( 'content-none' );
+	fundamento_template( 'content-none' );
 endif;

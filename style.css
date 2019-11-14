@@ -846,6 +846,9 @@ a:active {
 	padding: 1em;
 	background: #f0f2f4;
 	color: #777;
+	border-radius: 3px;
+	border: 1px solid #a9b4c0;
+	margin: 0 1em;
 }
 
 .post-navigation .nav-links a:hover {
@@ -2159,6 +2162,69 @@ a:active {
 	color: #fff;
 }
 
+.author-box {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	padding: 1em;
+	background: #f0f2f4;
+	margin: 0 1em 1em 1em;
+	border-radius: 3px;
+	border: 1px solid #a9b4c0;
+}
+
+.author-box a.author-more {
+	text-transform: uppercase;
+	font-size: small;
+	font-weight: bold;
+	color: #dd514c;
+}
+
+.author-box a:hover.author-more {
+	color: #b92823;
+}
+
+.author-box a.author-social-link {
+	margin-top: 1em;
+	display: inline-block;
+}
+
+.author-box a:hover.author-social-link.facebook svg {
+	fill: #3b5998;
+}
+
+.author-box a:hover.author-social-link.twitter svg {
+	fill: #1da1f2;
+}
+
+.author-box a:hover.author-social-link.instagram svg {
+	fill: #fd1d1d;
+}
+
+.author-box a:hover.author-social-link.linkedin svg {
+	fill: #2867b2;
+}
+
+.author-box .author-data {
+	padding-right: 1em;
+	font-size: small;
+}
+
+.author-box .author-data h3 {
+	margin: 0;
+}
+
+.author-box .author-avatar {
+	min-width: 175px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.author-box .author-avatar img {
+	border-radius: 50%;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -2319,6 +2385,12 @@ a:active {
 .comment-form-comment textarea {
 	display: block;
 	width: 100%;
+}
+
+.archive-header {
+	background: #dd514c;
+	color: #fff;
+	padding: 1em;
 }
 
 /*--------------------------------------------------------------

@@ -45,7 +45,7 @@ class Walker_Comment extends \Walker_Comment {
 								<?php 
 									printf( 
 										/* translators: Author says: */
-										__( '%s <span class="says">says:</span>', 'EngenhariaLivre\Fundamento' ),
+										__( '%s <span class="says">says:</span>', 'fundamento' ),
 										sprintf( '<b class="fn">%s</b>',
 											get_comment_author_link( $comment )
 										)
@@ -57,12 +57,12 @@ class Walker_Comment extends \Walker_Comment {
 										<?php echo esc_html( get_comment_date( '', $comment ) ); ?>
 									</time>
 								</a>
-								<?php edit_comment_link( __( 'Edit', 'EngenhariaLivre\Fundamento' ), '<span class="edit-link">', '</span>' ); ?>
+								<?php edit_comment_link( __( 'Edit', 'fundamento' ), '<span class="edit-link">', '</span>' ); ?>
 							</div><!-- .comment-metadata -->
 						</div><!-- .comment-author -->
 
 						<?php if ( '0' === $comment->comment_approved ) : ?>
-						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'EngenhariaLivre\Fundamento' ); ?></p>
+						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'fundamento' ); ?></p>
 						<?php endif; ?>
 					</footer><!-- .comment-meta -->
 
