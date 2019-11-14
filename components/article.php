@@ -7,11 +7,11 @@
 
 $content = is_singular() ? 'content' : 'summary';
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'template-' . $content ); ?>>
 	<?php
 		fundamento_template( 'elements/entry-header' );
 		fundamento_post_thumbnail();
-		fundamento_template( 'elements/' . $content );
+		fundamento_template( 'elements/entry-' . $content );
 		fundamento_template( 'elements/entry-footer' );
 		fundamento_template( 'elements/author-data' );
 	?>

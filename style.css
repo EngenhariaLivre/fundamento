@@ -2225,6 +2225,23 @@ a:active {
 	border-radius: 50%;
 }
 
+.entry-content .wp-caption .wp-caption-text {
+	background: #f0f2f4;
+	color: #777;
+	font-size: small;
+	margin: 0;
+	padding: 0.75em;
+	border-bottom: 1px solid #a9b4c0;
+	border-left: 1px solid #a9b4c0;
+	border-right: 1px solid #a9b4c0;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.entry-content .wp-caption .wp-caption-text a:hover {
+	color: #dd514c;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
