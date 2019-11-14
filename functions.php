@@ -97,6 +97,11 @@ function fundamento_body_classes( $classes ) {
 	} else {
 		$classes[] = 'no-sidebar';
 	}
+
+	if ( null !== paginate_links() ) {
+		$classes[] = 'is-paginated';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'fundamento_body_classes' );
@@ -224,7 +229,7 @@ function fundamento_entry_footer() {
  * @param string|array $attr Valid attributes for the_post_thumbnail().
  */
 function fundamento_featured_image( $size = 'post-thumbnail', $attr = '' ) {
-	if ( has_post_thumbnail() ) :
+	if ( has_post_thumbnail() && ! post_password_required() ) :
 		the_post_thumbnail( $size, $attr );
 	else :
 		?>
@@ -238,9 +243,10 @@ function fundamento_featured_image( $size = 'post-thumbnail', $attr = '' ) {
  * Template tag to display the post thumbnail
  */
 function fundamento_post_thumbnail() {
-	if ( post_password_required() || is_attachment() ) {
+	if ( is_attachment() ) {
 		return;
 	}
+
 	if ( is_singular() ) :
 		// TODO: Change this div below to a <figure>.
 		?>
@@ -297,22 +303,43 @@ function fundamento_post_navigation() {
 		the_post_navigation(
 			array(
 				/* translators: %s: parent post link */
-				'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'engenharia-livre' ), '%title' ),
+				'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'fundamento' ), '%title' ),
 			)
 		);
 	} elseif ( is_singular( 'post' ) ) {
 		// Previous/next post navigation.
 		the_post_navigation(
 			array(
-				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'engenharia-livre' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Next post:', 'engenharia-livre' ) . '</span> <br/>' .
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'fundamento' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Next post:', 'fundamento' ) . '</span> <br/>' .
 					'<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'engenharia-livre' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Previous post:', 'engenharia-livre' ) . '</span> <br/>' .
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'fundamento' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Previous post:', 'fundamento' ) . '</span> <br/>' .
 					'<span class="post-title">%title</span>',
 			)
 		);
 	}
+}
+
+/**
+ * Posts pagination.
+ */
+function fundamento_the_posts_navigation() {
+	the_posts_pagination(
+		array(
+			'mid_size'  => 2,
+			'prev_text' => sprintf(
+				'%s <span class="nav-prev-text">%s</span>',
+				fundamento_the_theme_svg( 'chevron' ),
+				__( 'Newer posts', 'fundamento' )
+			),
+			'next_text' => sprintf(
+				'<span class="nav-next-text">%s</span> %s',
+				__( 'Older posts', 'fundamento' ),
+				fundamento_the_theme_svg( 'chevron' )
+			),
+		)
+	);
 }
 
 /**
@@ -324,13 +351,12 @@ function fundamento_post_navigation() {
  * @param  array   $args        wp_nav_menu() arguments.
  * @return string  $item_output The menu item output with social icon.
  */
-function fundamento_nav_menu_social_icons( $item_output, $item, $depth, $args )
-{
+function fundamento_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
 		$svg = EngenhariaLivre\Fundamento\SVG_Icons::get_social_link_svg( $item->url );
-		if (empty($svg)) {
-			$svg = fundamento_get_theme_svg('link');
+		if ( empty( $svg ) ) {
+			$svg = fundamento_get_theme_svg( 'link' );
 		}
 		$item_output = str_replace( $args->link_after, '</span>' . $svg, $item_output );
 	}

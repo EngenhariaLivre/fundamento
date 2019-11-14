@@ -35,6 +35,9 @@ if ( have_posts() ) :
 		endif;
 
 	endwhile;
+
+	fundamento_the_posts_navigation();
+
 else :
 	get_template_part( 'content-none' );
 endif;

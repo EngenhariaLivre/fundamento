@@ -162,3 +162,100 @@
 		font-size: 12rem;
 	}
 }
+
+.pagination {
+	padding: 1em 1em  0 1em;
+	margin: 1em 0 0 0;
+	font-weight: bold;
+	position: relative;
+	border-top: 5px solid;
+
+	.current {
+		background: $red;
+		color: $white;
+		border-radius: 3px;
+	}
+
+	a {
+		color: $black;
+		border-radius: 3px;
+		width: 30px;
+		height: 30px;
+
+		&:hover {
+			color: $red;
+			background: $lightgrey;
+		}
+	}
+
+	.page-numbers {
+		padding: 5px 10px;
+	}
+
+	a.prev,
+	a.next {
+
+		&:hover {
+			background: transparent;
+		}
+	}
+
+	.prev,
+	.next {
+		top: 0;
+		position: absolute;
+		&::before,
+		&::after {
+			line-height: 30px;
+			font-size: 30px;
+			display: flex;
+			align-content: center;
+			justify-content: center;
+		}
+	}
+
+	.prev {
+		right: 30px;
+		&::before {
+			content: "\2039";
+		}
+	}
+
+	.next {
+		right: 0;
+		&::after {
+			content: '\203A';
+		}
+	}
+
+	.nav-prev-text,
+	.nav-next-text {
+		@extend .screen-reader-text;
+	}
+}
+
+.page-links {
+	padding: 1em 0;
+	border-top: 5px solid;
+	font-weight: bold;
+
+	.post-page-numbers {
+		padding: 5px 10px;
+	}
+
+	.current {
+		background: $red;
+		color: $white;
+		border-radius: 3px;
+	}
+
+	a {
+		color: $black;
+		border-radius: 3px;
+
+		&:hover {
+			color: $red;
+			background: $lightgrey;
+		}
+	}
+}

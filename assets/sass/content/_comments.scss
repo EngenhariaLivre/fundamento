@@ -12,7 +12,7 @@
 	}
 
 	&.is-not-active {
-		display: none;
+		@extend .screen-reader-text;
 	}
 }
 
@@ -160,7 +160,7 @@
 }
 
 .logged-in-as {
-	background: $lightyellow;
+	background: lightyellow;
 	padding: 0.75em;
 	border-radius: 5px;
 	font-size: 14rem;

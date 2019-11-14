@@ -57,6 +57,7 @@
 		"build:vendor-prefixes-esc": "postcss -r --no-map assets/css/editor-style-classic.css",
 		"lint:css": "wp-scripts lint-style 'style.css' 'assets/**/*.css'",
 		"lint:js": "npm link eslint && wp-scripts lint-js 'assets/**/*.js'",
+		"fix:js": "npm link eslint && wp-scripts lint-js 'assets/**/*.js' --fix",
 		"lint:pkg-json": "wp-scripts lint-pkg-json"
 	}
 }
