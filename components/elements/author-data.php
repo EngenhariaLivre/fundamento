@@ -5,7 +5,7 @@
  * @package EngenhariaLivre\Fundamento
  */
 
-if ( ! is_singular() || is_front_page() ) {
+if ( ! is_singular() ) {
     return;
 }
 ?>

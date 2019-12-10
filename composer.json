@@ -26,7 +26,8 @@
 		"checkcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --runtime-set testVersion 5.6-",
 		"fixcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --runtime-set testVersion 5.6-",
 		"lint": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-		"make-pot": "wp i18n make-pot . languages/fundamento.pot"
+		"make-pot": "wp i18n make-pot . languages/fundamento.pot",
+		"start": "wp server --host=localhost --port=8030"
 	},
 	"support": {
 		"issues": "https://github.com/EngenhariaLivre/fundamento/issues",

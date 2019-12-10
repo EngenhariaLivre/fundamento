@@ -183,3 +183,18 @@
 	color: $white;
 	padding: 1em;
 }
+
+.featured-content {
+	figure {
+		margin: 0;
+	}
+
+	.featured-content {
+		position: relative;
+	}
+
+	img {
+		// position: absolute;
+		top: 0;
+	}
+}

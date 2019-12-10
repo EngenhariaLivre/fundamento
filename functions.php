@@ -78,7 +78,7 @@ $theme->add_script( 'engenharia-livre-scripts', get_template_directory_uri() . '
 
 /**
  * Custom body classes for the theme
- * 
+ *
  * @param string|array $classes CSS classes to add on the <body>.
  */
 function fundamento_body_classes( $classes ) {
@@ -106,6 +106,9 @@ function fundamento_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'fundamento_body_classes' );
 
+/**
+ * Custom post classes
+ */
 function fundamento_post_class( $classes, $class, $post_id ) {
 	if ( has_post_thumbnail() ) {
 		$classes[] = 'has-post-thumbnail';
@@ -116,7 +119,7 @@ add_filter( 'post_class', 'fundamento_post_class', 10, 3 );
 
 /**
  * Template file loader
- * 
+ *
  * @param string $file File to be included.
  */
 function fundamento_template( $file ) {
@@ -158,7 +161,7 @@ function fundamento_posted_by() {
 		esc_html_x( 'Written by %s', 'post author', 'fundamento' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
-	
+
 	echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore
 }
 
@@ -178,7 +181,7 @@ function fundamento_entry_footer() {
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'fundamento' ) );
-		
+
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
 			printf( '<span class="tags-links">' . fundamento_get_theme_svg( 'tag' ) . __('<span class="screen-reader-text">Tagged</span> %1$s', 'fundamento' ) . '</span>', $tags_list ); // phpcs:ignore
@@ -224,7 +227,7 @@ function fundamento_entry_footer() {
 
 /**
  * Template tag to display the featured image or a placeholder
- * 
+ *
  * @param string|array $size A valid the_post_thumbnail() size.
  * @param string|array $attr Valid attributes for the_post_thumbnail().
  */
@@ -256,28 +259,28 @@ function fundamento_post_thumbnail() {
 		</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
-
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-		<?php
-		fundamento_featured_image( 'post-thumbnail',
-			array(
-				'alt' => the_title_attribute(
-					array(
-						'echo' => false,
-					)
-				),
-			)
-		);
-		?>
-	</a>
-
+	<div class="post-thumbnail-container">
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<?php
+			fundamento_featured_image( 'post-thumbnail',
+				array(
+					'alt' => the_title_attribute(
+						array(
+							'echo' => false,
+						)
+					),
+				)
+			);
+			?>
+		</a>
+	</div>
 		<?php
 	endif; // End is_singular().
 }
 
 /**
  * Displays comments publishing date in human readable format
- * 
+ *
  * @param string         $date    Valid date.
  * @param string         $d       Valid date.
  * @param int|WP_Comment $comment WP_Comment or comment ID.
@@ -444,12 +447,12 @@ function fundamento_custom_contact_info( $fields ) {
     unset( $fields['aim'] );
     unset( $fields['yim'] );
 	unset( $fields['jabber'] );
-	
+
 	// Adds custom contact fields.
 	foreach ( fundamento_user_custom_fields() as $key => $value ) {
 		$fields[$key] = $value;
 	}
-     
+
     // Return the amended contact fields.
     return $fields;
 }
@@ -527,4 +530,41 @@ function fundamento_archive_title() {
 		</header><!-- .archive-header -->
 		<?php
 	}
+}
+
+/**
+ * Change the excerpt's length
+ */
+function fundamento_custom_excerpt_length( $length ) {
+	return 30;
+}
+add_filter( 'excerpt_length', 'fundamento_custom_excerpt_length', 999 );
+
+/**
+ * Filter for the featured posts
+ */
+function fundamento_get_featured_posts() {
+	return apply_filters( 'fundamento_get_featured_posts', array() );
+}
+
+/**
+ * Check if has featured posts
+ */
+function fundamento_has_featured_posts( $minimum = 1 ) {
+	if ( is_singular() )
+		return false;
+
+	if ( is_paged() )
+		return false;
+
+	$minimum = absint( $minimum );
+	$featured_posts = apply_filters( 'fundamento_get_featured_posts', array() );
+
+	if ( ! is_array( $featured_posts ) )
+		return false;
+
+	if ( $minimum > count( $featured_posts ) )
+		return false;
+
+	return true;
 }

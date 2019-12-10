@@ -41,12 +41,12 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 						<?php
 				endif;
-					$_s_description = get_bloginfo( 'description', 'display' );
+					$fundamento_description = get_bloginfo( 'description', 'display' );
 				
-					if ( $_s_description || is_customize_preview() ) :
+					if ( $fundamento_description || is_customize_preview() ) :
 						/** TODO: remove text description with Theme Customization API */
 						?>
-				<p class="site-description"><?php echo $_s_description; /* phpcs:ignore */ ?></p>
+				<p class="site-description"><?php echo $fundamento_description; /* phpcs:ignore */ ?></p>
 					<?php endif; ?>
 			</div><!-- .site-branding -->
 
@@ -64,7 +64,7 @@
 				<div class="site-links is-not-active">
 				<?php
 					wp_nav_menu( array(
-						'container_class' => false, // Must be the same id as aria-controls int the button above.
+						'container_class' => false,
 						'depth'           => 1,
 						'menu_id'         => 'primary-menu',
 						'theme_location'  => 'menu-1',
@@ -80,4 +80,9 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<?php
+			if ( is_front_page() && fundamento_has_featured_posts() ) {
+				get_template_part( 'components/featured-content' );
+			}
+		?>
 		<div class="container">

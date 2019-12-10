@@ -14,15 +14,6 @@ namespace EngenhariaLivre\Fundamento;
 class Theme {
 
 	/**
-	 * Custom user fields.
-	 */
-	private $user_fields = array(
-		'Facebook',
-		'Twitter',
-		'Instagram',
-	);
-
-	/**
 	 * Constructs the object with the the necessary calls.
 	 */
 	public function __construct() {
@@ -44,6 +35,16 @@ class Theme {
 					'comment-list',
 					'gallery',
 					'caption',
+				)
+			)
+			->add_support( 'featured-content',
+				array(
+					'filter'     => 'fundamento_get_featured_posts',
+					'max_posts'  => 20,
+					'post_types' => array(
+						'post',
+						'page',
+					)
 				)
 			)
 			->add_style( 'styles', get_stylesheet_uri() )
@@ -89,7 +90,7 @@ class Theme {
 	 * @param string $feature The feature being added.
 	 * @param mixed  $args    Extra arguments to pass along with certain features.
 	 */
-	public function add_support( $feature, $args = null ) {
+	public function add_support( $feature, $args = array() ) {
 		$this->add_action( 'after_setup_theme',
 			function() use ( $feature, $args ) {
 				add_theme_support( $feature, $args );
