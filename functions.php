@@ -569,3 +569,19 @@ function fundamento_has_featured_posts( $minimum = 1 ) {
 
 	return true;
 }
+
+/**
+ * Custom markup for the wp_title()
+ */
+function fundamento_wp_title( $output, $show ) {
+	if ( $show === 'name' && $output === 'Engenharia Livre' ) {
+		return str_replace(
+			array('Engenharia', 'Livre'),
+			array('<span class="engenharia">Engenharia</span>', '<span class="livre">Livre</span>'),
+			$output
+		);
+	}
+
+	return $output;
+}
+add_filter( 'bloginfo', 'fundamento_wp_title', 10, 2 );
