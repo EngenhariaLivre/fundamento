@@ -74,6 +74,7 @@ $theme->widget( array(
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</aside>',
 ));
+$theme->add_script( 'tiny-slider', get_template_directory_uri() . '/assets/js/tiny-slider.js' );
 $theme->add_script( 'engenharia-livre-scripts', get_template_directory_uri() . '/assets/js/scripts.js' );
 
 /**

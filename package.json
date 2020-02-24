@@ -65,7 +65,5 @@
 		"fix:php": "composer fixcs",
 		"lint:php": "composer lint"
 	},
-	"dependencies": {
-		"tiny-slider": "^2.9.2"
-	}
+	"dependencies": {}
 }

@@ -16,17 +16,20 @@
 
 .header-container {
 	display: flex;
-	padding: 0 1em;
 }
 
 .site-branding {
-	.site-title a {
-		visibility: hidden;
-		color: $white;
-		font-weight: bold;
-
-		&:hover {
-			background: rgba(0, 0, 0, 0.2);
+	.site-title {
+		margin: 0;
+		a {
+			color: $white;
+			font-weight: bold;
+			display: block;
+			padding: 0 0.5em;
+	
+			&:hover {
+				background: rgba(0, 0, 0, 0.2);
+			}
 		}
 	}
 
