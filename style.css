@@ -10,6 +10,7 @@ License URI: LICENSE
 Text Domain: engenharia-livre
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+@import "https://fonts.googleapis.com/css?family=Fira+Sans:300,500&text=EngenhariaLivre&display=swap";
 @import "https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap";
 /*--------------------------------------------------------------
 # Reset
@@ -510,6 +511,16 @@ textarea:focus {
 	border-color: #222;
 }
 
+select {
+	display: block;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	color: #333;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -557,6 +568,7 @@ var {
 }
 
 h1,
+.site-title,
 .entry-title {
 	font-size: 36.24396rem;
 }
@@ -707,6 +719,14 @@ a:active {
 
 .site-branding .site-title a:hover {
 	background: rgba(0, 0, 0, 0.2);
+}
+
+.site-branding .site-title .engenharia {
+	font-weight: 300;
+}
+
+.site-branding .site-title .livre {
+	font-weight: 500;
 }
 
 /*--------------------------------------------------------------
@@ -2761,6 +2781,28 @@ a:active {
 	display: none;
 }
 
+.widget ul {
+	margin: 0;
+	padding: 0;
+}
+
+.widget li {
+	list-style: none;
+}
+
+.widget li a {
+	display: block;
+	padding: 0.3em 0;
+}
+
+.widget-title {
+	margin-top: 0;
+}
+
+.widget-area .widget {
+	margin-bottom: 1.5em;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -2768,18 +2810,32 @@ a:active {
 	background: #424655;
 	color: #fff;
 	margin-top: 2em;
+	font-size: 1.2em;
 }
 
 .site-footer a {
 	color: #fff;
 }
 
-.site-footer a:hover {
-	color: #1f8dd6;
+.site-footer .container {
+	display: flex;
 }
 
-.site-footer .container {
+.site-footer .widget {
 	padding: 1em;
+}
+
+.site-footer .widget li {
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+
+.site-footer .widget li a {
+	padding: 0.5em;
+	border-left: 3px solid transparent;
+}
+
+.site-footer .widget li a:hover {
+	border-left: 3px solid #1f8dd6;
 }
 
 /*--------------------------------------------------------------

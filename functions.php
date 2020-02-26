@@ -585,3 +585,17 @@ function fundamento_wp_title( $output, $show ) {
 	return $output;
 }
 add_filter( 'bloginfo', 'fundamento_wp_title', 10, 2 );
+
+/**
+ * Add Google Fonts DNS prefetching
+ */
+function fundamento_google_fonts_dns_prefetching() {
+?>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+<?php
+
+}
+add_filter( 'wp_head', 'fundamento_google_fonts_dns_prefetching', 10, 2 );

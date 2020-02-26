@@ -81,3 +81,13 @@ input[type="color"]:focus,
 textarea:focus {
 	border-color: $black;
 }
+
+select {
+	display: block;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	color: #333;
+}

@@ -50,6 +50,4 @@
 		mouseDrag: true,
 		navPosition: 'bottom'
 	  });
-
-	console.log(slider);
 }());

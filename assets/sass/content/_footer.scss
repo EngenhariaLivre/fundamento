@@ -2,17 +2,31 @@
     background: $darkblue;
     color: #fff;
     margin-top: 2em;
+    font-size: 1.2em;
 
     a {
         color: #fff;
-
-        &:hover {
-            color: $blue;
-        }
     }
 
     .container {
+        display: flex;
+    }
+
+    .widget {
         padding: 1em;
+
+        li {
+            border-bottom: 1px dotted rgba(255, 255, 255, .3);
+
+            a {
+                padding: 0.5em;
+                border-left: 3px solid transparent;
+
+                &:hover {
+                    border-left: 3px solid $blue;
+                }
+            }
+        }
     }
 }
 
