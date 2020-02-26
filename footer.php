@@ -36,6 +36,9 @@
 			?>
 		</div><!-- .site-info -->
 	</div><!-- .container -->
+	<div class="container site-info">
+		
+	</div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

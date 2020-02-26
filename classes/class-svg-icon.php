@@ -60,6 +60,7 @@ class SVG_Icons {
 		}
 		foreach ( $regex_map as $icon => $regex ) {
 			if ( preg_match( $regex, $uri ) ) {
+				// TODO: Remove use of functions external to the class itself
 				return fundamento_get_theme_svg( $icon, 'social' );
 			}
 		}
