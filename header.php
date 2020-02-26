@@ -77,9 +77,9 @@
 				</div>
 			</nav><!-- #site-navigation -->
 
-			<?php if ( has_nav_menu( 'social' ) ) : ?>
 			<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentynineteen' ); ?>">
 				<?php
+				if ( has_nav_menu( 'social' ) ) :
 					wp_nav_menu(
 					array(
 						'theme_location' => 'social',
@@ -89,9 +89,11 @@
 						'depth'          => 1,
 						)
 					);
+				endif;
 				?>
+
+				<?php echo get_search_form(); ?>
 			</nav><!-- .social-navigation -->
-			<?php endif; ?>
 		</div>
 	</header><!-- #masthead -->
 
