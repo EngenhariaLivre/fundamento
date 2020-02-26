@@ -2,7 +2,6 @@
     background: $darkblue;
     color: #fff;
     margin-top: 2em;
-    font-size: 1.2em;
 
     a {
         color: #fff;
@@ -31,5 +30,6 @@
 }
 
 .site-info {
-    @extend .screen-reader-text;
+    border-top: 3px solid rgba(0, 0, 0, 0.2);
+    padding: 1em;
 }
