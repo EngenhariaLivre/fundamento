@@ -2455,7 +2455,7 @@ a:active {
 
 .featured-content .entry-header {
 	position: absolute;
-	bottom: 0;
+	bottom: 5px;
 	padding: 1em;
 	margin: 1em;
 	background: rgba(0, 0, 0, 0.6);
@@ -2471,6 +2471,15 @@ a:active {
 .featured-content a {
 	display: block;
 	color: #fff;
+}
+
+.featured-content .entry-header a {
+	border-bottom: 5px solid transparent;
+}
+
+.featured-content .entry-header a:hover {
+	color: #fff;
+	border-color: yellow;
 }
 
 .featured-content img {

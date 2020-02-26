@@ -10,7 +10,7 @@
 
     .entry-header {
         position: absolute;
-        bottom: 0;
+        bottom: 5px;
         padding: 1em;
         margin: 1em;
         background: rgba(0, 0, 0, 0.6);
@@ -25,7 +25,16 @@
 
 	a {
         display: block;
-        color: #fff;
+		color: #fff;
+	}
+
+	.entry-header a {
+		border-bottom: 5px solid transparent;
+
+		&:hover {
+			color: #fff;
+			border-color: $yellow;
+		}
 	}
 
 	img {
