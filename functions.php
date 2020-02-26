@@ -67,13 +67,6 @@ $theme->widget(array(
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</aside>',
 ));
-$theme->widget( array(
-	'name'          => esc_html__( 'Footer - column 4', 'fundamento' ),
-	'id'            => 'footer-4',
-	'description'   => esc_html__( 'Add widgets here.', 'fundamento' ),
-	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</aside>',
-));
 $theme->add_script( 'tiny-slider', get_template_directory_uri() . '/assets/js/tiny-slider.js' );
 $theme->add_script( 'engenharia-livre-scripts', get_template_directory_uri() . '/assets/js/scripts.js' );
 

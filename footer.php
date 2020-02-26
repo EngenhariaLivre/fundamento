@@ -21,7 +21,6 @@
 			dynamic_sidebar( 'footer-1' );
 			dynamic_sidebar( 'footer-2' );
 			dynamic_sidebar( 'footer-3' );
-			dynamic_sidebar( 'footer-4' );
 		?>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fundamento' ) ); ?>">
