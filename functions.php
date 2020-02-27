@@ -564,21 +564,15 @@ function fundamento_has_featured_posts( $minimum = 1 ) {
 }
 
 /**
- * Custom markup for the wp_title()
+ * Custom markup for site name
  */
-function fundamento_wp_title( $output, $show ) {
-	if ( $show === 'name' && $output === 'Engenharia Livre' ) {
-		return str_replace(
-			array('Engenharia', 'Livre'),
-			array('<span class="engenharia">Engenharia</span>', '<span class="livre">Livre</span>'),
-			$output
-		);
-	}
-
-	return $output;
+function fundamento_site_name() {
+	echo str_replace(
+		array('Engenharia', 'Livre'),
+		array('<span class="engenharia">Engenharia</span>', '<span class="livre">Livre</span>'),
+		get_bloginfo( 'name' )
+	);
 }
-add_filter( 'bloginfo', 'fundamento_wp_title', 10, 2 );
-
 /**
  * Add Google Fonts DNS prefetching
  */
