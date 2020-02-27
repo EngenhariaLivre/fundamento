@@ -530,7 +530,7 @@ function fundamento_archive_title() {
  * Change the excerpt's length
  */
 function fundamento_custom_excerpt_length( $length ) {
-	return 30;
+	return 25;
 }
 add_filter( 'excerpt_length', 'fundamento_custom_excerpt_length', 999 );
 
