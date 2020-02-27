@@ -389,3 +389,39 @@
 		display: none;
 	}
 }
+
+.error404 .site-content .container {
+	z-index: initial;
+}
+
+.error404 .content-area {
+
+	max-width: 100%;
+
+	.page-header,
+	p {
+		text-align: center;
+	}
+
+	.search-form {
+		padding: 1em;
+	}
+
+
+	.widget-container {
+		display: flex;
+
+		.widget {
+			max-width: 33.333333%;
+		}
+	}
+
+	.widget {
+		padding: 1em;
+	}
+
+	.search-form {
+		max-width: 73.3333%;
+		margin: auto;
+	}
+}

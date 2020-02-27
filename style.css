@@ -370,6 +370,26 @@ body {
 	background: #f6f6f6;
 }
 
+html {
+	height: 100%;
+}
+
+/*
+.site {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.site-content {
+	height: 100%;
+}
+
+.site-footer {
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+*/
 .container {
 	max-width: 1024px;
 	margin: 0 auto;
@@ -2441,6 +2461,40 @@ a:active {
 	display: none;
 }
 
+.error404 .site-content .container {
+	z-index: initial;
+}
+
+.error404 .content-area {
+	max-width: 100%;
+}
+
+.error404 .content-area .page-header,
+.error404 .content-area p {
+	text-align: center;
+}
+
+.error404 .content-area .search-form {
+	padding: 1em;
+}
+
+.error404 .content-area .widget-container {
+	display: flex;
+}
+
+.error404 .content-area .widget-container .widget {
+	max-width: 33.333333%;
+}
+
+.error404 .content-area .widget {
+	padding: 1em;
+}
+
+.error404 .content-area .search-form {
+	max-width: 73.3333%;
+	margin: auto;
+}
+
 /*--------------------------------------------------------------
 ## Featured Content
 --------------------------------------------------------------*/
@@ -2930,22 +2984,28 @@ a:active {
 	padding: 1em;
 }
 
-.site-footer .widget li {
-	border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+.site-footer .widget li:hover {
+	background: #424655;
 }
 
 .site-footer .widget li a {
 	padding: 0.5em;
-	border-left: 3px solid transparent;
+	border-left: 3px solid #fff;
 }
 
 .site-footer .widget li a:hover {
-	border-left: 3px solid #1f8dd6;
+	border-left: 3px solid #67c2f0;
+	color: #67c2f0;
 }
 
 .site-info {
 	border-top: 3px solid rgba(0, 0, 0, 0.2);
 	padding: 1em;
+	text-align: center;
+}
+
+.site-info .creator {
+	width: 100%;
 }
 
 /*--------------------------------------------------------------

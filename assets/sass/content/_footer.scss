@@ -15,14 +15,18 @@
         padding: 1em;
 
         li {
-            border-bottom: 1px dotted rgba(255, 255, 255, .3);
+
+            &:hover {
+                background: $darkblue;
+            }
 
             a {
                 padding: 0.5em;
-                border-left: 3px solid transparent;
+                border-left: 3px solid $white;
 
                 &:hover {
-                    border-left: 3px solid $blue;
+                    border-left: 3px solid $lightblue;
+                    color: $lightblue;
                 }
             }
         }
@@ -32,4 +36,9 @@
 .site-info {
     border-top: 3px solid rgba(0, 0, 0, 0.2);
     padding: 1em;
+    text-align: center;
+    
+    .creator {
+        width: 100%;
+    }
 }

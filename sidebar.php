@@ -7,7 +7,7 @@
  * @package EngenhariaLivre\Fundamento
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) || is_404() ) {
 	return;
 }
 ?>

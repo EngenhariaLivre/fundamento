@@ -57,8 +57,8 @@ ol {
 	list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -123,9 +123,30 @@ blockquote {
 		text-align: right;
 	}
 }
+
 body {
 	background: #f6f6f6;
 }
+
+html {
+	height: 100%;
+}
+/*
+.site {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.site-content {
+	height: 100%;
+}
+
+.site-footer {
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+*/
 
 .container {
 	max-width: $size__max-width;
