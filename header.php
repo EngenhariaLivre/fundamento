@@ -97,6 +97,8 @@
 		</div>
 	</header><!-- #masthead -->
 
+	<?php fundamento_display_ad( 'leaderboard' ); ?>
+
 	<div id="content" class="site-content">
 		<?php
 		if ( is_front_page() && fundamento_has_featured_posts() ) {

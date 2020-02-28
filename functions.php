@@ -591,11 +591,74 @@ function fundamento_display_featured_posts() {
 	$featured_posts = fundamento_get_featured_posts();
 
 	foreach ( (array) $featured_posts as $featured_post ) {
-		$post = $featured_post;
+		$post = $featured_post; // phpcs:ignore
 
 		setup_postdata( $featured_post );
 		fundamento_template( 'article' );
 	}
 
 	wp_reset_postdata();
+}
+
+/**
+ * Create panel to add ads
+ * 
+ * @param WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
+ */
+function fundamento_customize_register( $wp_customize ) {
+	$wp_customize->add_section('ads',
+		array(
+			'title' => __( 'Ads', 'fundamento' ),
+		)
+	);
+	
+	$wp_customize->add_setting( 'leaderboard_code' );
+	$wp_customize->add_setting( 'halfpage_code' );
+	$wp_customize->add_setting( 'largerectangle_code' );
+	
+	
+	$wp_customize->add_control( 'leaderboard',
+		array(
+			'label'    => __( 'Insert leaderboard (728 x 90 px)', 'fundamento' ),
+			'type'     => 'textarea',
+			'section'  => 'ads',
+			'settings' => 'leaderboard_code',
+		)
+	);
+
+	$wp_customize->add_control( 'halfpage',
+		array(
+			'label'    => __( 'Insert halfpage (300 x 600 px)', 'fundamento' ),
+			'type'     => 'textarea',
+			'section'  => 'ads',
+			'settings' => 'halfpage_code',
+		)
+	);
+
+	$wp_customize->add_control( 'largerectangle',
+		array(
+			'label'    => __( 'Insert large rectangle (336 x 280 px)', 'fundamento' ),
+			'type'     => 'textarea',
+			'section'  => 'ads',
+			'settings' => 'largerectangle_code',
+		)
+	);
+}
+add_action( 'customize_register', 'fundamento_customize_register' );
+
+/**
+ * Display ads
+ * 
+ * @param string $ad_id ID of the desired ad.
+ */
+function fundamento_display_ad( $ad_id ) {
+	$ad = get_theme_mod( $ad_id . '_code' );
+
+	if ( '' !== $ad ) {
+		?>
+	<div class="ad <?php echo esc_html( $ad_id ); ?>">
+		<?php echo esc_html( $ad ); ?>
+	</div>
+		<?php
+	}
 }

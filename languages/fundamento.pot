@@ -193,69 +193,85 @@ msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #. translators: time ago
-#: functions.php:270
+#: functions.php:271
 msgctxt "%s = human-readable time difference"
 msgid "%s ago"
 msgstr ""
 
 #. translators: %s: parent post link
-#: functions.php:288
+#: functions.php:289
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%s</span>"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:296
 msgid "Next Post"
 msgstr ""
 
-#: functions.php:296
+#: functions.php:297
 msgid "Next post:"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:299
 msgid "Previous Post"
 msgstr ""
 
-#: functions.php:299
+#: functions.php:300
 msgid "Previous post:"
 msgstr ""
 
-#: functions.php:316
+#: functions.php:317
 msgid "Newer posts"
 msgstr ""
 
-#: functions.php:320
+#: functions.php:321
 msgid "Older posts"
 msgstr ""
 
-#: functions.php:411
+#: functions.php:412
 msgid "Facebook"
 msgstr ""
 
-#: functions.php:412
+#: functions.php:413
 msgid "Twitter"
 msgstr ""
 
-#: functions.php:413
+#: functions.php:414
 msgid "Instagram"
 msgstr ""
 
-#: functions.php:414
+#: functions.php:415
 msgid "LinkedIn"
 msgstr ""
 
-#: functions.php:474
+#: functions.php:475
 msgid "Search:"
 msgstr ""
 
 #. translators: %s: Number of search results
-#: functions.php:481
+#: functions.php:482
 msgid "We found %s result for your search."
 msgid_plural "We found %s results for your search."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:490
+#: functions.php:491
 msgid "We could not find any results for your search. You can give it another try through the search form below."
+msgstr ""
+
+#: functions.php:611
+msgid "Ads"
+msgstr ""
+
+#: functions.php:622
+msgid "Insert leaderboard (728 x 90 px)"
+msgstr ""
+
+#: functions.php:631
+msgid "Insert halfpage (300 x 600 px)"
+msgstr ""
+
+#: functions.php:640
+msgid "Insert large rectangle (336 x 280 px)"
 msgstr ""
 
 #: header.php:25

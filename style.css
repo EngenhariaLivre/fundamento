@@ -3110,3 +3110,25 @@ object {
 .custom-logo-link {
 	display: inline-block;
 }
+
+/*--------------------------------------------------------------
+# Ads
+--------------------------------------------------------------*/
+.ad {
+	margin: 0 auto;
+	max-width: 728px;
+	text-align: center;
+}
+
+.ad .leaderboard {
+	background: #f0f2f4;
+	margin-top: 1em;
+}
+
+.ad .halfpage {
+	background: #f0f2f4;
+}
+
+.ad .large-rectangle {
+	background: #f0f2f4;
+}
