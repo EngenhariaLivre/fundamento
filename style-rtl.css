@@ -678,15 +678,14 @@ a:active {
 
 .screen-reader-text:focus, .site-branding .site-description:focus, .pagination .nav-prev-text:focus,
 .pagination .nav-next-text:focus, .comments-area.is-not-active:focus {
-	background-color: #f1f1f1;
+	background-color: #fff;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #21759b;
+	color: #1f8dd6;
 	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 0.875em;
 	font-weight: bold;
 	height: auto;
 	right: 5px;
@@ -704,9 +703,6 @@ a:active {
 	outline: 0;
 }
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -3012,13 +3008,11 @@ a:active {
 # WordPres
 --------------------------------------------------------------*/
 .alignleft {
-	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
 
 .alignright {
-	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
@@ -3115,4 +3109,26 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+# Ads
+--------------------------------------------------------------*/
+.ad {
+	margin: 0 auto;
+	max-width: 728px;
+	text-align: center;
+}
+
+.ad .leaderboard {
+	background: #f0f2f4;
+	margin-top: 1em;
+}
+
+.ad .halfpage {
+	background: #f0f2f4;
+}
+
+.ad .large-rectangle {
+	background: #f0f2f4;
 }
