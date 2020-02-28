@@ -4,6 +4,8 @@
  *
  * @package EngenhariaLivre\Fundamento
  * @since 1.0.0
+ * @phpcs:disable WordPress.NamingConventions.ValidHookName.UseUnderscores
+ * @phpcs:disable WordPress.NamingConventions.ValidHookName.NotLowercase
  */
 
 namespace EngenhariaLivre\Fundamento;
@@ -44,7 +46,7 @@ class Theme {
 					'post_types' => array(
 						'post',
 						'page',
-					)
+					),
 				)
 			)
 			->add_style( 'styles', get_stylesheet_uri() )

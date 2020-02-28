@@ -77,16 +77,16 @@
 				</div>
 			</nav><!-- #site-navigation -->
 
-			<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentynineteen' ); ?>">
+			<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'fundamento' ); ?>">
 				<?php
 				if ( has_nav_menu( 'social' ) ) :
 					wp_nav_menu(
-					array(
-						'theme_location' => 'social',
-						'menu_class'     => 'social-links-menu',
-						'link_before'    => '<span class="screen-reader-text">',
-						'link_after'     => '</span>' . fundamento_get_theme_svg( 'link' ),
-						'depth'          => 1,
+						array(
+							'theme_location' => 'social',
+							'menu_class'     => 'social-links-menu',
+							'link_before'    => '<span class="screen-reader-text">',
+							'link_after'     => '</span>' . fundamento_get_theme_svg( 'link' ),
+							'depth'          => 1,
 						)
 					);
 				endif;
@@ -99,8 +99,8 @@
 
 	<div id="content" class="site-content">
 		<?php
-			if ( is_front_page() && fundamento_has_featured_posts() ) {
-				get_template_part( 'components/featured-content' );
-			}
+		if ( is_front_page() && fundamento_has_featured_posts() ) {
+			get_template_part( 'components/featured-content' );
+		}
 		?>
 		<div class="container">

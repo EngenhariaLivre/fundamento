@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 				get_the_title()
 			)
 		);
-	?>
+		?>
 </span>
 
 

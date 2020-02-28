@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Engenharia Livre 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/engenharia-livre\n"
+"Report-Msgid-Bugs-To: https://engenharialivre.com/contato\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2019-11-12T18:22:18-03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.3.0\n"
-"X-Domain: engenharia-livre\n"
+"X-Domain: fundamento\n"
 
 #. Theme Name of the theme
 msgid "Engenharia Livre"

@@ -293,7 +293,7 @@ input::-moz-focus-inner {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 3em 1.5em 0;
 }
 
 ol {
@@ -303,7 +303,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -337,7 +337,7 @@ table {
 blockquote {
 	background: #f0f2f4;
 	margin: 0;
-	padding: 1em 1em 1em 2.3em;
+	padding: 1em 2.3em 1em 1em;
 	border-radius: 3px;
 	position: relative;
 }
@@ -351,19 +351,19 @@ blockquote::before, blockquote::after {
 blockquote::before {
 	content: open-quote;
 	top: 10px;
-	left: 10px;
+	right: 10px;
 }
 
 blockquote::after {
 	content: close-quote;
 	bottom: -0.4em;
-	right: 10px;
+	left: 10px;
 }
 
 blockquote cite {
 	display: block;
 	margin-top: 2em;
-	text-align: right;
+	text-align: left;
 }
 
 body {
@@ -398,7 +398,7 @@ html {
 table tr th {
 	text-align: center;
 	font-weight: bold;
-	text-align: left;
+	text-align: right;
 	font-size: 110%;
 	border-bottom: 2px solid;
 }
@@ -421,13 +421,13 @@ table {
 
 th {
 	font-weight: bold;
-	text-align: left;
+	text-align: right;
 }
 
 caption,
 th,
 td {
-	padding: 0.5em 1em 0.5em 0;
+	padding: 0.5em 0 0.5em 1em;
 }
 
 caption {
@@ -444,7 +444,7 @@ th {
 
 /* Use this if you use span-x classes on th/td. */
 table .last {
-	padding-right: 0;
+	padding-left: 0;
 }
 
 /*--------------------------------------------------------------
@@ -538,7 +538,7 @@ textarea:focus {
 select {
 	display: block;
 	line-height: 1.3;
-	padding: .6em 1.4em .5em .8em;
+	padding: .6em .8em .5em 1.4em;
 	width: 100%;
 	max-width: 100%;
 	box-sizing: border-box;
@@ -571,12 +571,12 @@ pre {
 pre::before {
 	content: '</>';
 	padding: 3px;
-	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 	background: #c4ccd4;
 	font-size: 10px;
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	color: #777;
 	font-weight: bold;
 }
@@ -643,7 +643,7 @@ a:active {
 	z-index: -1;
 	width: 100%;
 	height: 5%;
-	left: 0;
+	right: 0;
 	bottom: 0;
 	background-color: #1f8dd6;
 	transition: all ease 0.3s;
@@ -689,7 +689,7 @@ a:active {
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -739,7 +739,7 @@ a:active {
 	color: #fff;
 	font-weight: bold;
 	display: block;
-	padding: 0 0.5em 0 0;
+	padding: 0 0 0 0.5em;
 }
 
 .site-branding .site-title a:hover {
@@ -756,10 +756,10 @@ a:active {
 
 @media screen and (max-width: 596px) {
 	.site-branding .site-title a {
-		padding-left: 0.5em;
+		padding-right: 0.5em;
 	}
 	.menu-toggle {
-		right: 0;
+		left: 0;
 	}
 }
 
@@ -774,26 +774,26 @@ a:active {
 	display: block;
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .main-navigation ul ul {
-	float: left;
+	float: right;
 	position: absolute;
 	top: 100%;
-	left: -999em;
+	right: -999em;
 	z-index: 99999;
 	background: #424655;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
+	right: -999em;
 	top: 0;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-	left: 100%;
+	right: 100%;
 }
 
 .main-navigation ul ul a {
@@ -802,7 +802,7 @@ a:active {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+	right: auto;
 }
 
 .main-navigation li {
@@ -824,12 +824,12 @@ a:active {
 .is-active.menu-toggle::after {
 	content: '';
 	position: absolute;
-	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
 	border-bottom: 10px solid #373a47;
 	position: absolute;
 	margin-top: 22px;
-	left: 22px;
+	right: 22px;
 }
 
 @media screen and (max-width: 580px) {
@@ -837,7 +837,7 @@ a:active {
 		display: none;
 	}
 	.site-links {
-		right: 0;
+		left: 0;
 	}
 	aside {
 		display: none;
@@ -845,7 +845,7 @@ a:active {
 }
 
 .social-navigation {
-	text-align: right;
+	text-align: left;
 	height: 64px;
 	flex-grow: 1;
 }
@@ -855,7 +855,7 @@ a:active {
 }
 
 .social-navigation .menu-social-container {
-	margin-right: 50px;
+	margin-left: 50px;
 }
 
 .social-navigation ul {
@@ -890,9 +890,9 @@ a:active {
 .social-navigation form {
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	padding-top: 7px;
-	text-align: right;
+	text-align: left;
 	overflow: hidden;
 	border-radius: 3px;
 	transition: width 1s ease-in-out;
@@ -904,10 +904,10 @@ a:active {
 	background: #3d8d3d;
 	color: #fff;
 	display: block;
-	padding-left: 40px;
+	padding-right: 40px;
 	width: 0;
 	transition: width .3s ease-in-out;
-	padding-right: 5px;
+	padding-left: 5px;
 }
 
 .social-navigation .search-field:focus {
@@ -923,7 +923,7 @@ a:active {
 	position: absolute;
 	font-size: 32px;
 	top: 0;
-	left: 0;
+	right: 0;
 	padding: 0 10px;
 }
 
@@ -938,7 +938,7 @@ a:active {
 	color: #fff;
 	font-size: 16px;
 	line-height: 1.625;
-	left: 0;
+	right: 0;
 }
 
 .site-links.is-active {
@@ -966,7 +966,7 @@ a:active {
 }
 
 .site-links li {
-	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
 }
 
 .site-links li:hover {
@@ -997,7 +997,7 @@ a:active {
 }
 
 .post-navigation .nav-next {
-	text-align: right;
+	text-align: left;
 }
 
 .post-navigation .nav-previous {
@@ -1061,7 +1061,7 @@ a:active {
 }
 
 .pagination .prev {
-	right: 30px;
+	left: 30px;
 }
 
 .pagination .prev::before {
@@ -1069,7 +1069,7 @@ a:active {
 }
 
 .pagination .next {
-	right: 0;
+	left: 0;
 }
 
 .pagination .next::after {
@@ -1207,11 +1207,11 @@ a:active {
 }
 
 .hamburger--3dx.is-active .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--3dx.is-active .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 }
 
 /*
@@ -1236,11 +1236,11 @@ a:active {
 }
 
 .hamburger--3dx-r.is-active .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--3dx-r.is-active .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 }
 
 /*
@@ -1265,11 +1265,11 @@ a:active {
 }
 
 .hamburger--3dy.is-active .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--3dy.is-active .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 }
 
 /*
@@ -1294,11 +1294,11 @@ a:active {
 }
 
 .hamburger--3dy-r.is-active .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--3dy-r.is-active .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 }
 
 /*
@@ -1323,11 +1323,11 @@ a:active {
 }
 
 .hamburger--3dxy.is-active .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--3dxy.is-active .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 }
 
 /*
@@ -1348,37 +1348,37 @@ a:active {
 
 .hamburger--3dxy-r.is-active .hamburger-inner {
 	background-color: transparent !important;
-	transform: rotateX(180deg) rotateY(180deg) rotateZ(-180deg);
+	transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
 }
 
 .hamburger--3dxy-r.is-active .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--3dxy-r.is-active .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 }
 
 /*
 	 * Arrow
 	 */
 .hamburger--arrow.is-active .hamburger-inner::before {
-	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
 }
 
 .hamburger--arrow.is-active .hamburger-inner::after {
-	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
+	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 }
 
 /*
 	 * Arrow Right
 	 */
 .hamburger--arrow-r.is-active .hamburger-inner::before {
-	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
+	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 }
 
 .hamburger--arrow-r.is-active .hamburger-inner::after {
-	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
 }
 
 /*
@@ -1394,13 +1394,13 @@ a:active {
 
 .hamburger--arrowalt.is-active .hamburger-inner::before {
 	top: 0;
-	transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);
+	transform: translate3d(8px, -10px, 0) rotate(45deg) scale(0.7, 1);
 	transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);
+	transform: translate3d(8px, 10px, 0) rotate(-45deg) scale(0.7, 1);
 	transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
@@ -1417,13 +1417,13 @@ a:active {
 
 .hamburger--arrowalt-r.is-active .hamburger-inner::before {
 	top: 0;
-	transform: translate3d(8px, -10px, 0) rotate(45deg) scale(0.7, 1);
+	transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);
 	transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .hamburger--arrowalt-r.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: translate3d(8px, 10px, 0) rotate(-45deg) scale(0.7, 1);
+	transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);
 	transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
@@ -1431,30 +1431,30 @@ a:active {
 	 * Arrow Turn
 	 */
 .hamburger--arrowturn.is-active .hamburger-inner {
-	transform: rotate(-180deg);
+	transform: rotate(180deg);
 }
 
 .hamburger--arrowturn.is-active .hamburger-inner::before {
-	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
+	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 }
 
 .hamburger--arrowturn.is-active .hamburger-inner::after {
-	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
 }
 
 /*
 	 * Arrow Turn Right
 	 */
 .hamburger--arrowturn-r.is-active .hamburger-inner {
-	transform: rotate(-180deg);
+	transform: rotate(180deg);
 }
 
 .hamburger--arrowturn-r.is-active .hamburger-inner::before {
-	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
 }
 
 .hamburger--arrowturn-r.is-active .hamburger-inner::after {
-	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
+	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
 }
 
 /*
@@ -1467,7 +1467,7 @@ a:active {
 }
 
 .hamburger--boring.is-active .hamburger-inner {
-	transform: rotate(45deg);
+	transform: rotate(-45deg);
 }
 
 .hamburger--boring.is-active .hamburger-inner::before {
@@ -1477,7 +1477,7 @@ a:active {
 
 .hamburger--boring.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 }
 
 /*
@@ -1501,7 +1501,7 @@ a:active {
 }
 
 .hamburger--collapse.is-active .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 	transition-delay: 0.22s;
 	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -1514,7 +1514,7 @@ a:active {
 
 .hamburger--collapse.is-active .hamburger-inner::before {
 	top: 0;
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 	transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -1539,7 +1539,7 @@ a:active {
 }
 
 .hamburger--collapse-r.is-active .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(45deg);
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
 	transition-delay: 0.22s;
 	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -1552,7 +1552,7 @@ a:active {
 
 .hamburger--collapse-r.is-active .hamburger-inner::before {
 	top: 0;
-	transform: rotate(90deg);
+	transform: rotate(-90deg);
 	transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -1576,7 +1576,7 @@ a:active {
 }
 
 .hamburger--elastic.is-active .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(135deg);
+	transform: translate3d(0, 10px, 0) rotate(-135deg);
 	transition-delay: 0.075s;
 }
 
@@ -1586,7 +1586,7 @@ a:active {
 }
 
 .hamburger--elastic.is-active .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(-270deg);
+	transform: translate3d(0, -20px, 0) rotate(270deg);
 	transition-delay: 0.075s;
 }
 
@@ -1610,7 +1610,7 @@ a:active {
 }
 
 .hamburger--elastic-r.is-active .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(-135deg);
+	transform: translate3d(0, 10px, 0) rotate(135deg);
 	transition-delay: 0.075s;
 }
 
@@ -1620,7 +1620,7 @@ a:active {
 }
 
 .hamburger--elastic-r.is-active .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(270deg);
+	transform: translate3d(0, -20px, 0) rotate(-270deg);
 	transition-delay: 0.075s;
 }
 
@@ -1636,14 +1636,14 @@ a:active {
 }
 
 .hamburger--emphatic .hamburger-inner::before {
-	left: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
+	right: 0;
+	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
 }
 
 .hamburger--emphatic .hamburger-inner::after {
 	top: 10px;
-	right: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+	left: 0;
+	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
 }
 
 .hamburger--emphatic.is-active .hamburger-inner {
@@ -1653,17 +1653,17 @@ a:active {
 }
 
 .hamburger--emphatic.is-active .hamburger-inner::before {
-	left: -80px;
-	top: -80px;
-	transform: translate3d(80px, 80px, 0) rotate(45deg);
-	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.hamburger--emphatic.is-active .hamburger-inner::after {
 	right: -80px;
 	top: -80px;
 	transform: translate3d(-80px, 80px, 0) rotate(-45deg);
 	transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburger--emphatic.is-active .hamburger-inner::after {
+	left: -80px;
+	top: -80px;
+	transform: translate3d(80px, 80px, 0) rotate(45deg);
+	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /*
@@ -1678,14 +1678,14 @@ a:active {
 }
 
 .hamburger--emphatic-r .hamburger-inner::before {
-	left: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
+	right: 0;
+	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
 }
 
 .hamburger--emphatic-r .hamburger-inner::after {
 	top: 10px;
-	right: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+	left: 0;
+	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
 }
 
 .hamburger--emphatic-r.is-active .hamburger-inner {
@@ -1695,17 +1695,17 @@ a:active {
 }
 
 .hamburger--emphatic-r.is-active .hamburger-inner::before {
-	left: -80px;
-	top: 80px;
-	transform: translate3d(80px, -80px, 0) rotate(-45deg);
-	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.hamburger--emphatic-r.is-active .hamburger-inner::after {
 	right: -80px;
 	top: 80px;
 	transform: translate3d(-80px, -80px, 0) rotate(45deg);
 	transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburger--emphatic-r.is-active .hamburger-inner::after {
+	left: -80px;
+	top: 80px;
+	transform: translate3d(80px, -80px, 0) rotate(-45deg);
+	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /*
@@ -1749,16 +1749,16 @@ a:active {
 }
 
 .hamburger--slider.is-active .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--slider.is-active .hamburger-inner::before {
-	transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+	transform: rotate(45deg) translate3d(5.71429px, -6px, 0);
 	opacity: 0;
 }
 
 .hamburger--slider.is-active .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(-90deg);
+	transform: translate3d(0, -20px, 0) rotate(90deg);
 }
 
 /*
@@ -1780,16 +1780,16 @@ a:active {
 }
 
 .hamburger--slider-r.is-active .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(-45deg);
+	transform: translate3d(0, 10px, 0) rotate(45deg);
 }
 
 .hamburger--slider-r.is-active .hamburger-inner::before {
-	transform: rotate(45deg) translate3d(5.71429px, -6px, 0);
+	transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
 	opacity: 0;
 }
 
 .hamburger--slider-r.is-active .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(90deg);
+	transform: translate3d(0, -20px, 0) rotate(-90deg);
 }
 
 /*
@@ -1809,7 +1809,7 @@ a:active {
 }
 
 .hamburger--spin.is-active .hamburger-inner {
-	transform: rotate(225deg);
+	transform: rotate(-225deg);
 	transition-delay: 0.12s;
 	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -1822,7 +1822,7 @@ a:active {
 
 .hamburger--spin.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -1843,7 +1843,7 @@ a:active {
 }
 
 .hamburger--spin-r.is-active .hamburger-inner {
-	transform: rotate(-225deg);
+	transform: rotate(225deg);
 	transition-delay: 0.12s;
 	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -1856,7 +1856,7 @@ a:active {
 
 .hamburger--spin-r.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(90deg);
+	transform: rotate(-90deg);
 	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -1886,13 +1886,13 @@ a:active {
 .hamburger--spring.is-active .hamburger-inner::before {
 	top: 0;
 	transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-	transform: translate3d(0, 10px, 0) rotate(45deg);
+	transform: translate3d(0, 10px, 0) rotate(-45deg);
 }
 
 .hamburger--spring.is-active .hamburger-inner::after {
 	top: 0;
 	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-	transform: translate3d(0, 10px, 0) rotate(-45deg);
+	transform: translate3d(0, 10px, 0) rotate(45deg);
 }
 
 /*
@@ -1916,7 +1916,7 @@ a:active {
 }
 
 .hamburger--spring-r.is-active .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
+	transform: translate3d(0, -10px, 0) rotate(45deg);
 	transition-delay: 0.22s;
 	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -1929,7 +1929,7 @@ a:active {
 
 .hamburger--spring-r.is-active .hamburger-inner::before {
 	top: 0;
-	transform: rotate(90deg);
+	transform: rotate(-90deg);
 	transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -1949,20 +1949,20 @@ a:active {
 }
 
 .hamburger--stand.is-active .hamburger-inner {
-	transform: rotate(90deg);
+	transform: rotate(-90deg);
 	background-color: transparent !important;
 	transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
 }
 
 .hamburger--stand.is-active .hamburger-inner::before {
 	top: 0;
-	transform: rotate(-45deg);
+	transform: rotate(45deg);
 	transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .hamburger--stand.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(45deg);
+	transform: rotate(-45deg);
 	transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -1982,20 +1982,20 @@ a:active {
 }
 
 .hamburger--stand-r.is-active .hamburger-inner {
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 	background-color: transparent !important;
 	transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
 }
 
 .hamburger--stand-r.is-active .hamburger-inner::before {
 	top: 0;
-	transform: rotate(-45deg);
+	transform: rotate(45deg);
 	transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .hamburger--stand-r.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(45deg);
+	transform: rotate(-45deg);
 	transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -2016,7 +2016,7 @@ a:active {
 }
 
 .hamburger--squeeze.is-active .hamburger-inner {
-	transform: rotate(45deg);
+	transform: rotate(-45deg);
 	transition-delay: 0.12s;
 	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -2029,7 +2029,7 @@ a:active {
 
 .hamburger--squeeze.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 	transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -2057,7 +2057,7 @@ a:active {
 }
 
 .hamburger--vortex.is-active .hamburger-inner {
-	transform: rotate(765deg);
+	transform: rotate(-765deg);
 	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -2073,7 +2073,7 @@ a:active {
 
 .hamburger--vortex.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(90deg);
+	transform: rotate(-90deg);
 }
 
 /*
@@ -2100,7 +2100,7 @@ a:active {
 }
 
 .hamburger--vortex-r.is-active .hamburger-inner {
-	transform: rotate(-765deg);
+	transform: rotate(765deg);
 	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -2116,7 +2116,7 @@ a:active {
 
 .hamburger--vortex-r.is-active .hamburger-inner::after {
 	bottom: 0;
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 }
 
 /*--------------------------------------------------------------
@@ -2256,7 +2256,7 @@ a:active {
 }
 
 .entry-meta .info {
-	margin-left: 1em;
+	margin-right: 1em;
 }
 
 .entry-meta .entry-date.published {
@@ -2355,7 +2355,7 @@ a:active {
 }
 
 .author-box .author-data {
-	padding-right: 1em;
+	padding-left: 1em;
 	font-size: small;
 }
 
@@ -2381,10 +2381,10 @@ a:active {
 	margin: 0;
 	padding: 0.75em;
 	border-bottom: 1px solid #a9b4c0;
-	border-left: 1px solid #a9b4c0;
 	border-right: 1px solid #a9b4c0;
-	border-bottom-right-radius: 3px;
+	border-left: 1px solid #a9b4c0;
 	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
 .entry-content .wp-caption .wp-caption-text a:hover {
@@ -2406,7 +2406,7 @@ a:active {
 
 .site-main .template-summary .edit-link {
 	position: absolute;
-	right: 1em;
+	left: 1em;
 	top: 0;
 }
 
@@ -2431,7 +2431,7 @@ a:active {
 
 .site-main .template-summary .entry-header {
 	grid-area: title;
-	margin-left: 1em;
+	margin-right: 1em;
 }
 
 .site-main .template-summary .entry-header .entry-title {
@@ -2627,27 +2627,27 @@ a:active {
 }
 
 .tns-horizontal.tns-no-subpixel > .tns-item {
-	float: left;
+	float: right;
 }
 
 .tns-horizontal.tns-carousel.tns-no-subpixel > .tns-item {
-	margin-right: -100%;
+	margin-left: -100%;
 }
 
 .tns-no-calc {
 	position: relative;
-	left: 0;
+	right: 0;
 }
 
 .tns-gallery {
 	position: relative;
-	left: 0;
+	right: 0;
 	min-height: 1px;
 }
 
 .tns-gallery > .tns-item {
 	position: absolute;
-	left: -100%;
+	right: -100%;
 	-webkit-transition: transform 0s, opacity 0s;
 	-moz-transition: transform 0s, opacity 0s;
 	transition: transform 0s, opacity 0s;
@@ -2655,7 +2655,7 @@ a:active {
 
 .tns-gallery > .tns-slide-active {
 	position: relative;
-	left: auto !important;
+	right: auto !important;
 }
 
 .tns-gallery > .tns-moving {
@@ -2691,7 +2691,7 @@ a:active {
 
 .tns-visually-hidden {
 	position: absolute;
-	left: -10000em;
+	right: -10000em;
 }
 
 .tns-transparent {
@@ -2735,7 +2735,7 @@ a:active {
 	width: -moz-calc(100% * 70 / 3);
 	width: calc(100% * 70 / 3);
 	position: absolute;
-	right: 0;
+	left: 0;
 }
 
 .tns-t-ct:after {
@@ -2750,7 +2750,7 @@ a:active {
 	width: -moz-calc(100% / 70);
 	width: calc(100% / 70);
 	height: 10px;
-	float: left;
+	float: right;
 }
 
 .tns-item {
@@ -2806,7 +2806,7 @@ a:active {
 
 .comment-metadata {
 	font-size: 12rem;
-	margin-left: 1em;
+	margin-right: 1em;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
@@ -2830,22 +2830,22 @@ a:active {
 }
 
 .comment-content {
-	margin: 1.5em 0 0 1em;
+	margin: 1.5em 1em 0 0;
 	padding: 1em;
 	background: #f0f2f4;
 	position: relative;
-	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	border-top-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
 }
 
 .comment-content::before {
 	content: '';
-	border-right: 20px solid transparent;
+	border-left: 20px solid transparent;
 	border-bottom: 20px solid #f0f2f4;
 	position: absolute;
 	top: -20px;
-	left: 0;
+	right: 0;
 }
 
 .bypostauthor .comment-content {
@@ -2868,7 +2868,7 @@ a:active {
 	background: rgba(0, 0, 0, 0.5);
 	color: #fff;
 	font-weight: bold;
-	margin-left: auto;
+	margin-right: auto;
 	border-radius: 3px;
 }
 
@@ -2878,7 +2878,7 @@ a:active {
 }
 
 #comments ol.children {
-	margin-left: 1.4em;
+	margin-right: 1.4em;
 }
 
 .children .avatar {
@@ -2898,7 +2898,7 @@ a:active {
 
 .comment-form-cookies-consent label {
 	width: auto;
-	padding-left: 1em;
+	padding-right: 1em;
 	font-weight: normal;
 }
 
@@ -2990,11 +2990,11 @@ a:active {
 
 .site-footer .widget li a {
 	padding: 0.5em;
-	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
 }
 
 .site-footer .widget li a:hover {
-	border-left: 3px solid #67c2f0;
+	border-right: 3px solid #67c2f0;
 	color: #67c2f0;
 }
 
@@ -3013,21 +3013,21 @@ a:active {
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
-	float: left;
-	margin-right: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 }
 
 .alignright {
 	display: inline;
-	float: right;
-	margin-left: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 }
 
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-caption {
@@ -3037,8 +3037,8 @@ a:active {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-caption .wp-caption-text {
