@@ -1,25 +1,25 @@
-# Copyright (C) 2019 Douglas Moura
+# Copyright (C) 2020 Douglas Moura
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Engenharia Livre 1.0.0\n"
-"Report-Msgid-Bugs-To: https://engenharialivre.com/contato\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: Fundamento 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/fundamento\n"
+"Last-Translator: Douglas Araujo de Moura <douglas.ademoura@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-11-12T18:22:18-03:00\n"
+"POT-Creation-Date: 2020-02-28T15:16:01-03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.3.0\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: fundamento\n"
 
 #. Theme Name of the theme
-msgid "Engenharia Livre"
+msgid "Fundamento"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "https://EngenhariaLivre\\Fundamento.com/"
+msgid "https://engenharialivre.com/"
 msgstr ""
 
 #. Description of the theme
@@ -32,4 +32,240 @@ msgstr ""
 
 #. Author URI of the theme
 msgid "https://douglasmoura.github.io/"
+msgstr ""
+
+#. translators: Author says:
+#: classes/class-walker-comment.php:48
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: classes/class-walker-comment.php:60
+msgid "Edit"
+msgstr ""
+
+#: classes/class-walker-comment.php:65
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:23
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:47
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:53
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:81
+msgid "Comments are closed."
+msgstr ""
+
+#: components/content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: components/content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: components/content-none.php:33
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: components/content-none.php:38
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: components/content-none.php:49
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: components/content-none.php:65
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: components/elements/bio.php:21
+msgid "More"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: components/elements/entry-content.php:17
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: components/elements/entry-content.php:28
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:19
+msgid "Primary"
+msgstr ""
+
+#: functions.php:20
+msgid "Social"
+msgstr ""
+
+#: functions.php:24
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:26
+#: functions.php:31
+#: functions.php:38
+#: functions.php:45
+#: functions.php:52
+#: functions.php:59
+#: functions.php:66
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:29
+msgid "Menu - column 1"
+msgstr ""
+
+#: functions.php:36
+msgid "Menu - column 2"
+msgstr ""
+
+#: functions.php:43
+msgid "Menu - column 3"
+msgstr ""
+
+#: functions.php:50
+msgid "Footer - column 1"
+msgstr ""
+
+#: functions.php:57
+msgid "Footer - column 2"
+msgstr ""
+
+#: functions.php:64
+msgid "Footer - column 3"
+msgstr ""
+
+#. translators: %s: post date.
+#: functions.php:146
+msgctxt "post date"
+msgid "at %s"
+msgstr ""
+
+#. translators: %s: post author.
+#: functions.php:159
+msgctxt "post author"
+msgid "Written by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: functions.php:173
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: functions.php:177
+msgid "<span class=\"screen-reader-text\">Posted in</span> %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: functions.php:181
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: functions.php:185
+msgid "<span class=\"screen-reader-text\">Tagged</span> %1$s"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions.php:193
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: time ago
+#: functions.php:270
+msgctxt "%s = human-readable time difference"
+msgid "%s ago"
+msgstr ""
+
+#. translators: %s: parent post link
+#: functions.php:288
+msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%s</span>"
+msgstr ""
+
+#: functions.php:295
+msgid "Next Post"
+msgstr ""
+
+#: functions.php:296
+msgid "Next post:"
+msgstr ""
+
+#: functions.php:298
+msgid "Previous Post"
+msgstr ""
+
+#: functions.php:299
+msgid "Previous post:"
+msgstr ""
+
+#: functions.php:316
+msgid "Newer posts"
+msgstr ""
+
+#: functions.php:320
+msgid "Older posts"
+msgstr ""
+
+#: functions.php:411
+msgid "Facebook"
+msgstr ""
+
+#: functions.php:412
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:413
+msgid "Instagram"
+msgstr ""
+
+#: functions.php:414
+msgid "LinkedIn"
+msgstr ""
+
+#: functions.php:474
+msgid "Search:"
+msgstr ""
+
+#. translators: %s: Number of search results
+#: functions.php:481
+msgid "We found %s result for your search."
+msgid_plural "We found %s results for your search."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:490
+msgid "We could not find any results for your search. You can give it another try through the search form below."
+msgstr ""
+
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:56
+msgid "Menu"
+msgstr ""
+
+#: header.php:80
+msgid "Social Links Menu"
 msgstr ""
