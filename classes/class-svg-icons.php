@@ -2,11 +2,11 @@
 /**
  * Custom icons for this theme.
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  * @since 1.0.0
  */
 
-namespace EngenhariaLivre\Fundamento;
+namespace Fundamento\Fundamento;
 
 /**
  * SVG ICONS CLASS
@@ -31,7 +31,7 @@ class SVG_Icons {
 		}
 		if ( array_key_exists( $icon, $arr ) ) {
 			$repl = '<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" ';
-			$svg  = preg_replace( '/^<svg /', $repl, trim( $arr[$icon] ) ); // Add extra attributes to SVG code.
+			$svg  = preg_replace( '/^<svg /', $repl, trim( $arr[ $icon ] ) ); // Add extra attributes to SVG code.
 			$svg  = str_replace( '#1A1A1B', $color, $svg ); // Replace the color.
 			$svg  = str_replace( '#', '%23', $svg ); // Urlencode hashes.
 			$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
@@ -52,15 +52,15 @@ class SVG_Icons {
 			$regex_map = array();
 			$map       = &self::$social_icons_map; // Use reference instead of copy, to save memory.
 			foreach ( array_keys( self::$social_icons ) as $icon ) {
-				$domains            = array_key_exists( $icon, $map ) ? $map[$icon] : array( sprintf( '%s.com', $icon ) );
+				$domains            = array_key_exists( $icon, $map ) ? $map[ $icon ] : array( sprintf( '%s.com', $icon ) );
 				$domains            = array_map( 'trim', $domains ); // Remove leading/trailing spaces, to prevent regex from failing to match.
 				$domains            = array_map( 'preg_quote', $domains );
-				$regex_map[$icon] = sprintf( '/(%s)/i', implode( '|', $domains ) );
+				$regex_map[ $icon ] = sprintf( '/(%s)/i', implode( '|', $domains ) );
 			}
 		}
 		foreach ( $regex_map as $icon => $regex ) {
 			if ( preg_match( $regex, $uri ) ) {
-				// TODO: Remove use of functions external to the class itself
+				// TODO: Remove use of functions external to the class itself.
 				return fundamento_get_theme_svg( $icon, 'social' );
 			}
 		}

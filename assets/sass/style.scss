@@ -1,5 +1,5 @@
 /*!
-Theme Name: Engenharia Livre
+Theme Name: Fundamento
 Theme URI: https://engenharialivre.com/
 Author: Douglas Moura
 Author URI: https://douglasmoura.github.io/
@@ -7,7 +7,7 @@ Description: Awesome theme for Engenharia Livre
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: engenharia-livre
+Text Domain: fundamento
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 @import "https://fonts.googleapis.com/css?family=Fira+Sans:300,500&text=EngenhariaLivre&display=swap";
@@ -45,19 +45,6 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 # Accessibility
 --------------------------------------------------------------*/
 @import "base/accessibility";
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-#page {}
-
-.hfeed {}
-
-.site {}
-
-.skip-link {}
-
-.screen-reader-text {}
 
 /*--------------------------------------------------------------
 # Header

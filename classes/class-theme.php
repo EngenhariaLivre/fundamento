@@ -2,11 +2,13 @@
 /**
  * Theme Setup
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  * @since 1.0.0
+ * @phpcs:disable WordPress.NamingConventions.ValidHookName.UseUnderscores
+ * @phpcs:disable WordPress.NamingConventions.ValidHookName.NotLowercase
  */
 
-namespace EngenhariaLivre\Fundamento;
+namespace Fundamento\Fundamento;
 
 /**
  * Enable a faster WordPress theme setup.
@@ -44,7 +46,7 @@ class Theme {
 					'post_types' => array(
 						'post',
 						'page',
-					)
+					),
 				)
 			)
 			->add_style( 'styles', get_stylesheet_uri() )
@@ -304,7 +306,7 @@ class Theme {
 	public function content_width( $width = 640 ) {
 		$this->add_action( 'after_setup_theme',
 			function() use ( $width ) {
-				$GLOBALS['content_width'] = apply_filters( 'EngenhariaLivre\Fundamento_content_width', $width );
+				$GLOBALS['content_width'] = apply_filters( 'Fundamento\Fundamento_content_width', $width );
 			},
 			0
 		);
