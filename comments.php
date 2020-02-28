@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  */
 
 if ( post_password_required() ) {
@@ -66,7 +66,7 @@ if ( have_comments() ) :
 			'style'       => 'ol',
 			'short_ping'  => true,
 			'avatar_size' => 48,
-			'walker'      => new EngenhariaLivre\Fundamento\Walker_Comment(),
+			'walker'      => new Fundamento\Fundamento\Walker_Comment(),
 		) );
 		?>
 	</ol><!-- .comment-list -->

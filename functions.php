@@ -1,10 +1,10 @@
 <?php
 /**
- * Engenharia Livre functions and definitions
+ * Fundamento functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  */
 
 /**
@@ -14,7 +14,7 @@ require get_template_directory() . '/classes/class-theme.php';
 require get_template_directory() . '/classes/class-walker-comment.php';
 require get_template_directory() . '/classes/class-svg-icons.php';
 
-$theme = new EngenhariaLivre\Fundamento\Theme();
+$theme = new Fundamento\Fundamento\Theme();
 $theme->register_nav_menus( array(
 	'menu-1' => esc_html__( 'Primary', 'fundamento' ),
 	'social' => esc_html__( 'Social', 'fundamento' ),
@@ -336,7 +336,7 @@ function fundamento_the_posts_navigation() {
 function fundamento_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
-		$svg = EngenhariaLivre\Fundamento\SVG_Icons::get_social_link_svg( $item->url );
+		$svg = Fundamento\Fundamento\SVG_Icons::get_social_link_svg( $item->url );
 		if ( empty( $svg ) ) {
 			$svg = fundamento_get_theme_svg( 'link' );
 		}
@@ -368,7 +368,7 @@ function fundamento_the_theme_svg( $svg_name, $group = 'ui', $color = '' ) {
 function fundamento_get_theme_svg( $svg_name, $group = 'ui', $color = '' ) {
 	// Make sure that only our allowed tags and attributes are included.
 	$svg = wp_kses(
-		EngenhariaLivre\Fundamento\SVG_Icons::get_svg( $svg_name, $group, $color ),
+		Fundamento\Fundamento\SVG_Icons::get_svg( $svg_name, $group, $color ),
 		array(
 			'svg'     => array(
 				'class'       => true,

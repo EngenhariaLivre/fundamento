@@ -2,11 +2,11 @@
 /**
  * Custom comment walker
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  * @since 1.0.0
  */
 
-namespace EngenhariaLivre\Fundamento;
+namespace Fundamento\Fundamento;
 
 /**
  * Custom comment walker for this theme.

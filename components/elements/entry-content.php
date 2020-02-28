@@ -5,7 +5,7 @@
  * This is the template that displays the content of a page or post
  * for any singular page.
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  */
 
 ?>

@@ -2,7 +2,7 @@
 /**
  * The 404/no results template
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  */
 
 ?>

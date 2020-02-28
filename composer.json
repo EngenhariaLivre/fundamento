@@ -1,7 +1,7 @@
 {
 	"name": "engenharia-livre/fundamento",
 	"type": "package",
-	"description": "Engenharia Livre is the default theme of Engenharia Livre.",
+	"description": "Fundamento is the default theme of Engenharia Livre.",
 	"keywords": [
 		"WordPress",
 		"Themes"
@@ -26,7 +26,7 @@
 		"checkcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --runtime-set testVersion 5.6-",
 		"fixcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --runtime-set testVersion 5.6-",
 		"lint": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-		"make-pot": "wp i18n make-pot . languages/fundamento.pot",
+		"make-pot": "wp i18n make-pot . languages/fundamento.pot --skip-js --exclude=vendor,node_modules ",
 		"start": "wp server --host=localhost --port=8030 --path='../../../'"
 	},
 	"support": {

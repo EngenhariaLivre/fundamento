@@ -1,13 +1,14 @@
 {
 	"name": "fundamento",
 	"version": "1.0.0",
-	"description": "Engenharia Livre default theme",
+	"description": "Engenharia Livre's default theme",
 	"author": "Douglas Moura",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"WordPress",
 		"Theme",
-		"Engenharia Livre"
+		"Engenharia Livre",
+		"Fundamento"
 	],
 	"homepage": "https://github.com/EngenhariaLivre/fundamento#readme",
 	"repository": {
