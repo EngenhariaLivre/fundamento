@@ -230,7 +230,6 @@ function fundamento_post_thumbnail() {
 	}
 
 	if ( is_singular() ) :
-		// TODO: Change this div below to a <figure>.
 		?>
 
 		<div class="post-thumbnail">
@@ -238,6 +237,7 @@ function fundamento_post_thumbnail() {
 		</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
+
 	<div class="post-thumbnail-container">
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
@@ -253,6 +253,7 @@ function fundamento_post_thumbnail() {
 			?>
 		</a>
 	</div>
+
 		<?php
 	endif; // End is_singular().
 }
