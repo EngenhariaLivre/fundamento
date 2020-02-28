@@ -585,10 +585,14 @@ add_filter( 'wp_head', 'fundamento_google_fonts_dns_prefetching', 10, 2 );
  * Template tag for featured posts
  */
 function fundamento_display_featured_posts() {
+	global $post;
+
 	$featured_posts = fundamento_get_featured_posts();
 
-	foreach ( (array) $featured_posts as $post ) {
-		setup_postdata( $post );
+	foreach ( (array) $featured_posts as $featured_post ) {
+		$post = $featured_post;
+
+		setup_postdata( $featured_post );
 		fundamento_template( 'article' );
 	}
 

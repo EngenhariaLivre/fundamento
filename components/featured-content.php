@@ -2,7 +2,7 @@
 /**
  * The template for displaying featured content
  *
- * @package Fundamento\Fundamento
+ * @package EngenhariaLivre\Fundamento
  */
 
 ?>
