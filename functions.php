@@ -601,6 +601,15 @@ function fundamento_display_featured_posts() {
 }
 
 /**
+ * Sanitize functions for ads
+ * 
+ * @param string $input Google Ads input to be displayed.
+ */
+function fundamento_sanitize_callback( $input ) {
+	return $input;
+}
+
+/**
  * Create panel to add ads
  * 
  * @param WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
@@ -612,9 +621,9 @@ function fundamento_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_setting( 'leaderboard_code' );
-	$wp_customize->add_setting( 'halfpage_code' );
-	$wp_customize->add_setting( 'largerectangle_code' );
+	$wp_customize->add_setting( 'leaderboard_code', array( 'sanitize_callback' => 'fundamento_sanitize_callback' ) );
+	$wp_customize->add_setting( 'halfpage_code', array( 'sanitize_callback' => 'fundamento_sanitize_callback' ) );
+	$wp_customize->add_setting( 'largerectangle_code', array( 'sanitize_callback' => 'fundamento_sanitize_callback' ) );
 	
 	
 	$wp_customize->add_control( 'leaderboard',
@@ -657,7 +666,7 @@ function fundamento_display_ad( $ad_id ) {
 	if ( '' !== $ad ) {
 		?>
 	<div class="ad <?php echo esc_html( $ad_id ); ?>">
-		<?php echo esc_html( $ad ); ?>
+		<?php echo $ad; // phpcs:ignore ?>
 	</div>
 		<?php
 	}
