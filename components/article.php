@@ -13,7 +13,11 @@ $content = is_singular() ? 'content' : 'summary';
 		fundamento_post_thumbnail();
 		fundamento_template( 'elements/entry-' . $content );
 		fundamento_template( 'elements/entry-footer' );
+
+	if ( is_singular() ) {
 		fundamento_display_ad( 'largerectangle' );
+	}
+	
 		fundamento_template( 'elements/bio' );
 	?>
 </article><!-- #post-<?php the_ID(); ?> -->

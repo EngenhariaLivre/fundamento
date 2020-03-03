@@ -7,7 +7,7 @@
  * @package Fundamento\Fundamento
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) || is_404() ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) || is_404() || ! fundamento_is_search_has_results() ) {
 	return;
 }
 ?>
