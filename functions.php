@@ -15,6 +15,10 @@ require get_template_directory() . '/classes/class-walker-comment.php';
 require get_template_directory() . '/classes/class-svg-icons.php';
 
 $theme = new Fundamento\Theme();
+
+$theme->add_image_size( 'featured-image', 1024, 466 );
+$theme->add_image_size( 'entry-summary', 286, 220 );
+$theme->add_image_size( 'single-feature', 683, 380 );
 $theme->register_nav_menus( array(
 	'menu-1' => esc_html__( 'Primary', 'fundamento' ),
 	'social' => esc_html__( 'Social', 'fundamento' ),
@@ -210,7 +214,9 @@ function fundamento_entry_footer() {
  * @param string|array $size A valid the_post_thumbnail() size.
  * @param string|array $attr Valid attributes for the_post_thumbnail().
  */
-function fundamento_featured_image( $size = 'post-thumbnail', $attr = '' ) {
+function fundamento_featured_image( $attr = '' ) {
+	$size = get_query_var( 'thumbnail' ) ? get_query_var( 'thumbnail' ) : 'post-thumbnail';
+
 	if ( has_post_thumbnail() && ! post_password_required() ) :
 		the_post_thumbnail( $size, $attr );
 	else :
@@ -594,6 +600,8 @@ function fundamento_display_featured_posts() {
 		$post = $featured_post; // phpcs:ignore
 
 		setup_postdata( $featured_post );
+		set_query_var( 'thumbnail', 'featured-image' );
+
 		fundamento_template( 'article' );
 	}
 
@@ -677,4 +685,11 @@ function fundamento_display_ad( $ad_id ) {
  */
 function fundamento_is_search_has_results() {
 	return 0 !== $GLOBALS['wp_query']->found_posts;
+}
+
+/**
+ * Check if it is a featured posts loop
+ */
+function is_featured_posts_loop() {
+	return true;
 }

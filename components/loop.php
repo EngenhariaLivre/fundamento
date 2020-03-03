@@ -13,6 +13,12 @@ if ( have_posts() ) :
 	while ( have_posts() ) :
 		the_post();
 
+		if ( is_singular() ) {
+			set_query_var( 'thumbnail', 'single-feature' );
+		} else {
+			set_query_var( 'thumbnail', 'entry-summary' );
+		}
+
 		fundamento_template( 'article' );
 
 		fundamento_post_navigation();
