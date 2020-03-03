@@ -3113,6 +3113,24 @@ object {
 	display: inline-block;
 }
 
+.wp-block-image figcaption {
+	font-size: 0.85em;
+	text-align: center;
+	background: #f0f2f4;
+	padding: 0.75em;
+	margin: 0;
+}
+
+.wp-block-image a {
+	color: #222;
+	text-decoration: underline;
+}
+
+.wp-block-image a:hover {
+	text-decoration: none;
+	color: #222;
+}
+
 /*--------------------------------------------------------------
 # Ads
 --------------------------------------------------------------*/
