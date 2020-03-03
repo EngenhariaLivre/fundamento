@@ -1,0 +1,303 @@
+# Copyright (C) 2020 Douglas Moura
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fundamento 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/fundamento\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-28T15:16:01-03:00\n"
+"PO-Revision-Date: 2020-03-03 14:24-0300\n"
+"X-Generator: Poedit 2.3\n"
+"X-Domain: fundamento\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language-Team: Douglas Moura <douglas.ademoura@gmail.com>\n"
+"Last-Translator: Douglas Moura <douglas.ademoura@gmail.com>\n"
+"Language: pt_BR\n"
+
+#. Theme Name of the theme
+msgid "Fundamento"
+msgstr "Fundamento"
+
+#. Theme URI of the theme
+msgid "https://engenharialivre.com/"
+msgstr "https://engenharialivre.com/"
+
+#. Description of the theme
+msgid "Awesome theme for Engenharia Livre"
+msgstr "Sensacional tema para o Engenharia Livre"
+
+#. Author of the theme
+msgid "Douglas Moura"
+msgstr "Douglas Moura"
+
+#. Author URI of the theme
+msgid "https://douglasmoura.github.io/"
+msgstr "https://douglasmoura.github.io/"
+
+#. translators: Author says:
+#: classes/class-walker-comment.php:48
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">disse:</span>"
+
+#: classes/class-walker-comment.php:60
+msgid "Edit"
+msgstr "Editar"
+
+#: classes/class-walker-comment.php:65
+msgid "Your comment is awaiting moderation."
+msgstr "Seu comentário aguarda moderação."
+
+#. translators: %s: post title
+#: comments.php:23
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Deixe um comentário<span class=\"screen-reader-text\"> em %s</span>"
+
+#. translators: 1: title.
+#: comments.php:47
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "Um comentário em &ldquo;%1$s&rdquo;"
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:53
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s comentário em &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s comentários em &ldquo;%2$s&rdquo;"
+
+#: comments.php:81
+msgid "Comments are closed."
+msgstr "Os comentários estão fechados."
+
+#: components/content-none.php:11
+msgid "Nothing Found"
+msgstr "Nada encontrado"
+
+#. translators: 1: link to WP admin new post page.
+#: components/content-none.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto para publicar seu primeiro artigot? <a href=\"%1$s\">Comece aqui</"
+"a>."
+
+#: components/content-none.php:33
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Desculpe, não encontramos nada que esteja de acordo com seus termos de "
+"pesquisa. Tente novamente com outras palavras-chave."
+
+#: components/content-none.php:38
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Não foi possível encontrar o que você está procurando. Talvez a busca "
+"possa ajudar."
+
+#: components/content-none.php:49
+msgid "Most Used Categories"
+msgstr "Categorias mais utilizadas"
+
+#. translators: %1$s: smiley
+#: components/content-none.php:65
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Tente procurer nos arquivos mensais. %1$s"
+
+#: components/elements/bio.php:21
+msgid "More"
+msgstr "Mais"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: components/elements/entry-content.php:17
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Continue lendo<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: components/elements/entry-content.php:28
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: functions.php:19
+msgid "Primary"
+msgstr "Primário"
+
+#: functions.php:20
+msgid "Social"
+msgstr "Social"
+
+#: functions.php:24
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:26 functions.php:31 functions.php:38 functions.php:45
+#: functions.php:52 functions.php:59 functions.php:66
+msgid "Add widgets here."
+msgstr "Adicione widgets aqui."
+
+#: functions.php:29
+msgid "Menu - column 1"
+msgstr "Menu - coluna 1"
+
+#: functions.php:36
+msgid "Menu - column 2"
+msgstr "Menu - coluna 2"
+
+#: functions.php:43
+msgid "Menu - column 3"
+msgstr "Menu - coluna 3"
+
+#: functions.php:50
+msgid "Footer - column 1"
+msgstr "Rodapé - coluna 1"
+
+#: functions.php:57
+msgid "Footer - column 2"
+msgstr "Rodapé - coluna 2"
+
+#: functions.php:64
+msgid "Footer - column 3"
+msgstr "Rodapé - coluna 3"
+
+#. translators: %s: post date.
+#: functions.php:146
+msgctxt "post date"
+msgid "at %s"
+msgstr "em %s"
+
+#. translators: %s: post author.
+#: functions.php:159
+msgctxt "post author"
+msgid "Written by %s"
+msgstr "Escrito por %s"
+
+#. translators: used between list items, there is a space after the comma
+#: functions.php:173
+msgid ", "
+msgstr ", "
+
+#. translators: 1: list of categories.
+#: functions.php:177
+msgid "<span class=\"screen-reader-text\">Posted in</span> %1$s"
+msgstr "<span class=\"screen-reader-text\">Publicado em</span> %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: functions.php:181
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#. translators: 1: list of tags.
+#: functions.php:185
+msgid "<span class=\"screen-reader-text\">Tagged</span> %1$s"
+msgstr "<span class=\"screen-reader-text\">Tags</span> %1$s"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: functions.php:193
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Editar <span class=\"screen-reader-text\">%s</span>"
+
+#. translators: time ago
+#: functions.php:271
+msgctxt "%s = human-readable time difference"
+msgid "%s ago"
+msgstr "%s atrás"
+
+#. translators: %s: parent post link
+#: functions.php:289
+msgid ""
+"<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%s</"
+"span>"
+msgstr ""
+"<span class=\"meta-nav\">Publicado em</span><span class=\"post-title\">%s</"
+"span>"
+
+#: functions.php:296
+msgid "Next Post"
+msgstr "Próximo artigo"
+
+#: functions.php:297
+msgid "Next post:"
+msgstr "Próximo artigo:"
+
+#: functions.php:299
+msgid "Previous Post"
+msgstr "Artigo anterior"
+
+#: functions.php:300
+msgid "Previous post:"
+msgstr "Artigo anterior:"
+
+#: functions.php:317
+msgid "Newer posts"
+msgstr "Artigos recentes"
+
+#: functions.php:321
+msgid "Older posts"
+msgstr "Artigos antigos"
+
+#: functions.php:412
+msgid "Facebook"
+msgstr "Facebook"
+
+#: functions.php:413
+msgid "Twitter"
+msgstr "Twitter"
+
+#: functions.php:414
+msgid "Instagram"
+msgstr "Instagram"
+
+#: functions.php:415
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: functions.php:475
+msgid "Search:"
+msgstr "Pesquisar:"
+
+#. translators: %s: Number of search results
+#: functions.php:482
+msgid "We found %s result for your search."
+msgid_plural "We found %s results for your search."
+msgstr[0] "Encontramos %s resultado para sua pesquisa."
+msgstr[1] "Encontramos %s resultados para sua pesquisa."
+
+#: functions.php:491
+msgid ""
+"We could not find any results for your search. You can give it another try "
+"through the search form below."
+msgstr ""
+"Não pudemos encontrar nenhum resultado para sua pesquisa. Você pode tentar "
+"novamente no formulário de pesquisa abaixo."
+
+#: functions.php:611
+msgid "Ads"
+msgstr "Anúncios"
+
+#: functions.php:622
+msgid "Insert leaderboard (728 x 90 px)"
+msgstr "Insira o leaderboard (728 x 90 px)"
+
+#: functions.php:631
+msgid "Insert halfpage (300 x 600 px)"
+msgstr "Insira o halfpage (300 x 600 px)"
+
+#: functions.php:640
+msgid "Insert large rectangle (336 x 280 px)"
+msgstr "Insira o large rectangle (336 x 280 px)"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "Pular para o conteúdo"
+
+#: header.php:56
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:80
+msgid "Social Links Menu"
+msgstr "Menu de links sociais"

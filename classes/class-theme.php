@@ -19,7 +19,8 @@ class Theme {
 	 * Constructs the object with the the necessary calls.
 	 */
 	public function __construct() {
-		$this->add_support( 'title-tag' )
+		$this->load_theme_textdomain( 'fundamento', get_template_directory() . '/languages' )
+			->add_support( 'title-tag' )
 			->add_support( 'custom-logo',
 				array(
 					'header-text' => array(
