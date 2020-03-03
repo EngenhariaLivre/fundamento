@@ -86,7 +86,7 @@ function fundamento_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() && fundamento_is_search_has_results() ) {
 		$classes[] = 'has-sidebar';
 	} else {
 		$classes[] = 'no-sidebar';
@@ -670,4 +670,11 @@ function fundamento_display_ad( $ad_id ) {
 	</div>
 		<?php
 	}
+}
+
+/**
+ * Check if search has results
+ */
+function fundamento_is_search_has_results() {
+	return 0 !== $GLOBALS['wp_query']->found_posts;
 }

@@ -398,10 +398,12 @@
 	}
 }
 
+.search-no-results .site-content .container,
 .error404 .site-content .container {
 	z-index: initial;
 }
 
+.search-no-results .content-area,
 .error404 .content-area {
 
 	max-width: 100%;

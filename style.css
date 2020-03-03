@@ -609,7 +609,7 @@ h3 {
 # Links
 --------------------------------------------------------------*/
 a {
-	transition: all .4s;
+	transition: all .3s;
 	color: #1f8dd6;
 	cursor: pointer;
 }
@@ -634,27 +634,25 @@ a:active {
 	display: inline-block;
 	color: black;
 	padding: 0 1px;
-	transition: color ease 0.3s;
-}
-
-.entry-content a::after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	width: 100%;
-	height: 5%;
-	left: 0;
-	bottom: 0;
-	background-color: #1f8dd6;
-	transition: all ease 0.3s;
+	background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), rgba(0, 255, 0, 0.35) calc(50% - 9px), rgba(0, 255, 0, 0.35) 100%);
+	transition: background-position 120ms ease-in-out, padding 120ms ease-in-out;
+	background-size: 100% 200%;
+	background-position: 0 0;
+	word-break: break-word;
 }
 
 .entry-content a:hover {
-	color: white;
+	background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), lime calc(50% - 9px), lime 100%);
+	background-position: 0 100%;
 }
 
-.entry-content a:hover::after {
-	height: 100%;
+.wp-block-button a {
+	padding: 0.5em 1em;
+	background-image: none;
+}
+
+.wp-block-button a:hover {
+	background-image: none;
 }
 
 /*--------------------------------------------------------------
@@ -2459,35 +2457,44 @@ a:active {
 	display: none;
 }
 
+.search-no-results .site-content .container,
 .error404 .site-content .container {
 	z-index: initial;
 }
 
+.search-no-results .content-area,
 .error404 .content-area {
 	max-width: 100%;
 }
 
+.search-no-results .content-area .page-header,
+.search-no-results .content-area p,
 .error404 .content-area .page-header,
 .error404 .content-area p {
 	text-align: center;
 }
 
+.search-no-results .content-area .search-form,
 .error404 .content-area .search-form {
 	padding: 1em;
 }
 
+.search-no-results .content-area .widget-container,
 .error404 .content-area .widget-container {
 	display: flex;
 }
 
+.search-no-results .content-area .widget-container .widget,
 .error404 .content-area .widget-container .widget {
 	max-width: 33.333333%;
 }
 
+.search-no-results .content-area .widget,
 .error404 .content-area .widget {
 	padding: 1em;
 }
 
+.search-no-results .content-area .search-form,
 .error404 .content-area .search-form {
 	max-width: 73.3333%;
 	margin: auto;
