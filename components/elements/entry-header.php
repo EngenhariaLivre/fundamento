@@ -2,7 +2,7 @@
 /**
  * The header template for a page or post
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  */
 
 ?>

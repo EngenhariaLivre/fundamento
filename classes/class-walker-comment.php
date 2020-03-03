@@ -2,11 +2,11 @@
 /**
  * Custom comment walker
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  * @since 1.0.0
  */
 
-namespace Fundamento\Fundamento;
+namespace Fundamento;
 
 /**
  * Custom comment walker for this theme.

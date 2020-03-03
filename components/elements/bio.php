@@ -2,7 +2,7 @@
 /**
  * The footer template for a page or post
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  */
 
 if ( ! is_singular() ) {

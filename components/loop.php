@@ -2,7 +2,7 @@
 /**
  * Loop template
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  */
 
 if ( have_posts() ) :

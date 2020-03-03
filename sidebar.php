@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) || is_404() || ! fundamento_is_search_has_results() ) {

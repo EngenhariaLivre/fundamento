@@ -2,7 +2,7 @@
 /**
  * The content template for a page or post
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  */
 
 $content = is_singular() ? 'content' : 'summary';

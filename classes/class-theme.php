@@ -2,13 +2,13 @@
 /**
  * Theme Setup
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  * @since 1.0.0
  * @phpcs:disable WordPress.NamingConventions.ValidHookName.UseUnderscores
  * @phpcs:disable WordPress.NamingConventions.ValidHookName.NotLowercase
  */
 
-namespace Fundamento\Fundamento;
+namespace Fundamento;
 
 /**
  * Enable a faster WordPress theme setup.
@@ -307,7 +307,7 @@ class Theme {
 	public function content_width( $width = 640 ) {
 		$this->add_action( 'after_setup_theme',
 			function() use ( $width ) {
-				$GLOBALS['content_width'] = apply_filters( 'Fundamento\Fundamento_content_width', $width );
+				$GLOBALS['content_width'] = apply_filters( 'Fundamento_content_width', $width );
 			},
 			0
 		);

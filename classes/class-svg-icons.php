@@ -2,11 +2,11 @@
 /**
  * Custom icons for this theme.
  *
- * @package Fundamento\Fundamento
+ * @package Fundamento
  * @since 1.0.0
  */
 
-namespace Fundamento\Fundamento;
+namespace Fundamento;
 
 /**
  * SVG ICONS CLASS
