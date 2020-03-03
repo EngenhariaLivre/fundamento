@@ -43,7 +43,7 @@ class Theme {
 			->add_support( 'featured-content',
 				array(
 					'filter'     => 'fundamento_get_featured_posts',
-					'max_posts'  => 20,
+					'max_posts'  => 5,
 					'post_types' => array(
 						'post',
 						'page',
