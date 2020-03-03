@@ -38,6 +38,8 @@ class Theme {
 					'comment-list',
 					'gallery',
 					'caption',
+					'script',
+					'style',
 				)
 			)
 			->add_support( 'featured-content',
