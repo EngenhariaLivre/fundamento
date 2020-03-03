@@ -93,10 +93,14 @@ class Theme {
 	 * @param string $feature The feature being added.
 	 * @param mixed  $args    Extra arguments to pass along with certain features.
 	 */
-	public function add_support( $feature, $args = array() ) {
+	public function add_support( $feature, $args = null ) {
 		$this->add_action( 'after_setup_theme',
 			function() use ( $feature, $args ) {
-				add_theme_support( $feature, $args );
+				if ( $args !== null ) {
+					add_theme_support( $feature, $args );
+				} else {
+					add_theme_support( $feature );
+				}
 			}
 		);
 
