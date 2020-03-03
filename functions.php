@@ -1,10 +1,10 @@
 <?php
 /**
- * Engenharia Livre functions and definitions
+ * Fundamento functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  */
 
 /**
@@ -12,9 +12,9 @@
  */
 require get_template_directory() . '/classes/class-theme.php';
 require get_template_directory() . '/classes/class-walker-comment.php';
-require get_template_directory() . '/classes/class-svg-icon.php';
+require get_template_directory() . '/classes/class-svg-icons.php';
 
-$theme = new EngenhariaLivre\Fundamento\Theme();
+$theme = new Fundamento\Fundamento\Theme();
 $theme->register_nav_menus( array(
 	'menu-1' => esc_html__( 'Primary', 'fundamento' ),
 	'social' => esc_html__( 'Social', 'fundamento' ),
@@ -68,7 +68,7 @@ $theme->widget(array(
 	'after_widget'  => '</aside>',
 ));
 $theme->add_script( 'tiny-slider', get_template_directory_uri() . '/assets/js/tiny-slider.js' );
-$theme->add_script( 'engenharia-livre-scripts', get_template_directory_uri() . '/assets/js/scripts.js' );
+$theme->add_script( 'fundamento-scripts', get_template_directory_uri() . '/assets/js/scripts.js' );
 
 /**
  * Custom body classes for the theme
@@ -86,7 +86,7 @@ function fundamento_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && ! is_404() && fundamento_is_search_has_results() ) {
 		$classes[] = 'has-sidebar';
 	} else {
 		$classes[] = 'no-sidebar';
@@ -102,6 +102,10 @@ add_filter( 'body_class', 'fundamento_body_classes' );
 
 /**
  * Custom post classes
+ * 
+ * @param string[] $classes An array of post class names.
+ * @param string[] $class   An array of additional class names added to the post.
+ * @param int      $post_id The post ID.
  */
 function fundamento_post_class( $classes, $class, $post_id ) {
 	if ( has_post_thumbnail() ) {
@@ -168,7 +172,7 @@ function fundamento_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'fundamento' ) );
 
-		if ( $categories_list ) {;
+		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
 			printf( '<span class="cat-links">' . fundamento_get_theme_svg( 'bookmark' ) . __('<span class="screen-reader-text">Posted in</span> %1$s', 'fundamento' ) . '</span>', $categories_list ); // phpcs:ignore
 		}
@@ -181,26 +185,7 @@ function fundamento_entry_footer() {
 			printf( '<span class="tags-links">' . fundamento_get_theme_svg( 'tag' ) . __('<span class="screen-reader-text">Tagged</span> %1$s', 'fundamento' ) . '</span>', $tags_list ); // phpcs:ignore
 		}
 	}
-	/*
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link(
-			sprintf(
-				wp_kses(
-					// translators: %s: post title
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'fundamento' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-		echo '</span>';
-	}
-	*/
+
 	edit_post_link(
 		sprintf(
 			wp_kses(
@@ -245,7 +230,6 @@ function fundamento_post_thumbnail() {
 	}
 
 	if ( is_singular() ) :
-		// TODO: Change this div below to a <figure>.
 		?>
 
 		<div class="post-thumbnail">
@@ -253,6 +237,7 @@ function fundamento_post_thumbnail() {
 		</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
+
 	<div class="post-thumbnail-container">
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
@@ -268,6 +253,7 @@ function fundamento_post_thumbnail() {
 			?>
 		</a>
 	</div>
+
 		<?php
 	endif; // End is_singular().
 }
@@ -284,8 +270,8 @@ function fundamento_comment_time_output( $date, $d, $comment ) {
 		/* translators: time ago */
 		_x( '%s ago', '%s = human-readable time difference', 'fundamento' ),
 		human_time_diff(
-			get_comment_time( 'U' ),    // TODO: Refactor those lines
-			current_time( 'timestamp' )
+			get_comment_time( 'U' ),
+			date_timestamp_get( current_datetime() )
 		)
 	);
 }
@@ -351,7 +337,7 @@ function fundamento_the_posts_navigation() {
 function fundamento_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
-		$svg = EngenhariaLivre\Fundamento\SVG_Icons::get_social_link_svg( $item->url );
+		$svg = Fundamento\Fundamento\SVG_Icons::get_social_link_svg( $item->url );
 		if ( empty( $svg ) ) {
 			$svg = fundamento_get_theme_svg( 'link' );
 		}
@@ -383,7 +369,7 @@ function fundamento_the_theme_svg( $svg_name, $group = 'ui', $color = '' ) {
 function fundamento_get_theme_svg( $svg_name, $group = 'ui', $color = '' ) {
 	// Make sure that only our allowed tags and attributes are included.
 	$svg = wp_kses(
-		EngenhariaLivre\Fundamento\SVG_Icons::get_svg( $svg_name, $group, $color ),
+		Fundamento\Fundamento\SVG_Icons::get_svg( $svg_name, $group, $color ),
 		array(
 			'svg'     => array(
 				'class'       => true,
@@ -438,17 +424,17 @@ function fundamento_user_custom_fields() {
  */
 function fundamento_custom_contact_info( $fields ) {
 	// Remove the old, unused fields.
-    unset( $fields['aim'] );
-    unset( $fields['yim'] );
+	unset( $fields['aim'] );
+	unset( $fields['yim'] );
 	unset( $fields['jabber'] );
 
 	// Adds custom contact fields.
 	foreach ( fundamento_user_custom_fields() as $key => $value ) {
-		$fields[$key] = $value;
+		$fields[ $key ] = $value;
 	}
 
-    // Return the amended contact fields.
-    return $fields;
+	// Return the amended contact fields.
+	return $fields;
 }
 
 add_filter( 'user_contactmethods', 'fundamento_custom_contact_info' );
@@ -459,12 +445,12 @@ add_filter( 'user_contactmethods', 'fundamento_custom_contact_info' );
 function fundamento_author_contact_links() {
 	foreach ( fundamento_user_custom_fields() as $key => $value ) {
 		if ( get_the_author_meta( $key ) !== '' ) :
-		?>
-		<a href="<?php the_author_meta( $key ) ?>" class="author-social-link <?php echo $key; ?>" title="<?php echo $value; ?>">
-			<span class="screen-reader-text"><?php echo $value; ?></span>
-			<?php fundamento_the_theme_svg( $key, 'social' ) ?>
+			?>
+		<a href="<?php the_author_meta( $key ); ?>" class="author-social-link <?php echo esc_html( $key ); ?>" title="<?php echo esc_html( $value ); ?>">
+			<span class="screen-reader-text"><?php echo esc_html( $value ); ?></span>
+			<?php fundamento_the_theme_svg( $key, 'social' ); ?>
 		</a>
-		<?php
+			<?php
 		endif;
 	}
 }
@@ -504,7 +490,6 @@ function fundamento_archive_title() {
 		} else {
 			$archive_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'fundamento' );
 		}
-
 	} elseif ( ! is_home() ) {
 		$archive_title    = get_the_archive_title();
 		$archive_subtitle = get_the_archive_description();
@@ -528,6 +513,8 @@ function fundamento_archive_title() {
 
 /**
  * Change the excerpt's length
+ * 
+ * @param int $length The maximum number of words. Default 55.
  */
 function fundamento_custom_excerpt_length( $length ) {
 	return 25;
@@ -543,22 +530,29 @@ function fundamento_get_featured_posts() {
 
 /**
  * Check if has featured posts
+ * 
+ * @param int $minimum Number of posts that should be displayed.
  */
 function fundamento_has_featured_posts( $minimum = 1 ) {
-	if ( is_singular() )
+	if ( is_singular() ) {
 		return false;
+	}
 
-	if ( is_paged() )
+	if ( is_paged() ) {
 		return false;
+	}
 
-	$minimum = absint( $minimum );
+	$minimum        = absint( $minimum );
 	$featured_posts = apply_filters( 'fundamento_get_featured_posts', array() );
 
-	if ( ! is_array( $featured_posts ) )
+	if ( ! is_array( $featured_posts ) ) {
 		return false;
+	}
+		
 
-	if ( $minimum > count( $featured_posts ) )
+	if ( $minimum > count( $featured_posts ) ) {
 		return false;
+	}
 
 	return true;
 }
@@ -567,22 +561,120 @@ function fundamento_has_featured_posts( $minimum = 1 ) {
  * Custom markup for site name
  */
 function fundamento_site_name() {
-	echo str_replace(
-		array('Engenharia', 'Livre'),
-		array('<span class="engenharia">Engenharia</span>', '<span class="livre">Livre</span>'),
+	$site_name = str_replace(
+		array( 'Engenharia', 'Livre' ),
+		array( '<span class="engenharia">Engenharia</span>', '<span class="livre">Livre</span>' ),
 		get_bloginfo( 'name' )
 	);
+
+	echo wp_kses_post( $site_name );
 }
+
 /**
  * Add Google Fonts DNS prefetching
  */
 function fundamento_google_fonts_dns_prefetching() {
-?>
-
+	?>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-
-<?php
+	<?php
 
 }
 add_filter( 'wp_head', 'fundamento_google_fonts_dns_prefetching', 10, 2 );
+
+/**
+ * Template tag for featured posts
+ */
+function fundamento_display_featured_posts() {
+	global $post;
+
+	$featured_posts = fundamento_get_featured_posts();
+
+	foreach ( (array) $featured_posts as $featured_post ) {
+		$post = $featured_post; // phpcs:ignore
+
+		setup_postdata( $featured_post );
+		fundamento_template( 'article' );
+	}
+
+	wp_reset_postdata();
+}
+
+/**
+ * Sanitize functions for ads
+ * 
+ * @param string $input Google Ads input to be displayed.
+ */
+function fundamento_sanitize_callback( $input ) {
+	return $input;
+}
+
+/**
+ * Create panel to add ads
+ * 
+ * @param WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
+ */
+function fundamento_customize_register( $wp_customize ) {
+	$wp_customize->add_section('ads',
+		array(
+			'title' => __( 'Ads', 'fundamento' ),
+		)
+	);
+	
+	$wp_customize->add_setting( 'leaderboard_code', array( 'sanitize_callback' => 'fundamento_sanitize_callback' ) );
+	$wp_customize->add_setting( 'halfpage_code', array( 'sanitize_callback' => 'fundamento_sanitize_callback' ) );
+	$wp_customize->add_setting( 'largerectangle_code', array( 'sanitize_callback' => 'fundamento_sanitize_callback' ) );
+	
+	
+	$wp_customize->add_control( 'leaderboard',
+		array(
+			'label'    => __( 'Insert leaderboard (728 x 90 px)', 'fundamento' ),
+			'type'     => 'textarea',
+			'section'  => 'ads',
+			'settings' => 'leaderboard_code',
+		)
+	);
+
+	$wp_customize->add_control( 'halfpage',
+		array(
+			'label'    => __( 'Insert halfpage (300 x 600 px)', 'fundamento' ),
+			'type'     => 'textarea',
+			'section'  => 'ads',
+			'settings' => 'halfpage_code',
+		)
+	);
+
+	$wp_customize->add_control( 'largerectangle',
+		array(
+			'label'    => __( 'Insert large rectangle (336 x 280 px)', 'fundamento' ),
+			'type'     => 'textarea',
+			'section'  => 'ads',
+			'settings' => 'largerectangle_code',
+		)
+	);
+}
+add_action( 'customize_register', 'fundamento_customize_register' );
+
+/**
+ * Display ads
+ * 
+ * @param string $ad_id ID of the desired ad.
+ */
+function fundamento_display_ad( $ad_id ) {
+	$ad = get_theme_mod( $ad_id . '_code' );
+
+	if ( '' !== $ad ) {
+		?>
+	<div class="ad <?php echo esc_html( $ad_id ); ?>">
+		<?php echo $ad; // phpcs:ignore ?>
+	</div>
+		<?php
+	}
+}
+
+/**
+ * Check if search has results
+ */
+function fundamento_is_search_has_results() {
+	return 0 !== $GLOBALS['wp_query']->found_posts;
+}

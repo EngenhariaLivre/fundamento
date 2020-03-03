@@ -2,7 +2,7 @@
 /**
  * Loop template
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  */
 
 if ( have_posts() ) :

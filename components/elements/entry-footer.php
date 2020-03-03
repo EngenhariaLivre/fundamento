@@ -2,7 +2,7 @@
 /**
  * The footer template for a page or post
  *
- * @package EngenhariaLivre\Fundamento
+ * @package Fundamento\Fundamento
  */
 
 ?>

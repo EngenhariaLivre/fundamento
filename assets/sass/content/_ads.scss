@@ -1,0 +1,20 @@
+.ad {
+    margin: 0 auto;
+    max-width: 728px;
+    text-align: center;
+
+    &.leaderboard {
+        background: $lightgrey;
+        margin-top: 1.25em;
+    }
+
+    &.halfpage {
+        background: $lightgrey;
+    }
+
+    &.largerectangle {
+        background: $lightgrey;
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+    }
+}
