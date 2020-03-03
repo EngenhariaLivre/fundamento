@@ -40,8 +40,8 @@ if ( have_comments() ) :
 	?>
 	<h2 class="comments-title">
 		<?php
-		$_s_comment_count = get_comments_number();
-		if ( '1' === $_s_comment_count ) {
+		$fundamento_comment_count = get_comments_number();
+		if ( '1' === $fundamento_comment_count ) {
 			printf(
 				/* translators: 1: title. */
 				esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'fundamento' ),
@@ -50,8 +50,8 @@ if ( have_comments() ) :
 		} else {
 			printf( // phpcs:ignore Standard.Category.SniffName.ErrorCode
 				/* translators: 1: comment count number, 2: title. */
-				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $_s_comment_count, 'comments title', 'fundamento' ) ),
-				number_format_i18n( $_s_comment_count ),
+				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $fundamento_comment_count, 'comments title', 'fundamento' ) ),
+				number_format_i18n( $fundamento_comment_count ),
 				'<span>' . esc_html( get_the_title() ) . '</span>'
 			);
 		}

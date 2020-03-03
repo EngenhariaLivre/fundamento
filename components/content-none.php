@@ -62,8 +62,8 @@
 
 			<?php
 			/* translators: %1$s: smiley */
-			$_s_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'fundamento' ), convert_smilies( ':)' ) ) . '</p>';
-			the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$_s_archive_content" );
+			$fundamento_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'fundamento' ), convert_smilies( ':)' ) ) . '</p>';
+			the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$fundamento_archive_content" );
 			?>
 			</div>
 			<?php
