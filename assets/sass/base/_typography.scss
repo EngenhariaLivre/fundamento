@@ -46,7 +46,8 @@ var {
 h1,
 .site-title,
 .entry-title {
-	font-size: $font-size * $golden-ratio * 1.4;
+	// font-size: $font-size * $golden-ratio * 1.4;
+	font-size: 4vh;
 }
 
 h2 {
