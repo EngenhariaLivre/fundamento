@@ -98,7 +98,7 @@ class Theme {
 	public function add_support( $feature, $args = null ) {
 		$this->add_action( 'after_setup_theme',
 			function() use ( $feature, $args ) {
-				if ( $args !== null ) {
+				if ( null !== $args ) {
 					add_theme_support( $feature, $args );
 				} else {
 					add_theme_support( $feature );

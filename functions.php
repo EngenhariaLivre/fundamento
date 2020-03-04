@@ -64,7 +64,7 @@ $theme->widget( array(
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</aside>',
 ));
-$theme->widget(array(
+$theme->widget( array(
 	'name'          => esc_html__( 'Footer - column 3', 'fundamento' ),
 	'id'            => 'footer-3',
 	'description'   => esc_html__( 'Add widgets here.', 'fundamento' ),
@@ -211,7 +211,6 @@ function fundamento_entry_footer() {
 /**
  * Template tag to display the featured image or a placeholder
  *
- * @param string|array $size A valid the_post_thumbnail() size.
  * @param string|array $attr Valid attributes for the_post_thumbnail().
  */
 function fundamento_featured_image( $attr = '' ) {
