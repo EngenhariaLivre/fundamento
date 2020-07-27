@@ -338,7 +338,7 @@ blockquote {
 	background: #f0f2f4;
 	margin: 0;
 	padding: 1em 2.3em 1em 1em;
-	border-radius: 3px;
+	border-radius: 12px;
 	position: relative;
 }
 
@@ -463,7 +463,7 @@ textarea {
 	color: #3e464f;
 	border: 2px solid;
 	border-color: #c4ccd4;
-	border-radius: 3px;
+	border-radius: 12px;
 	font-size: 14rem;
 	background: #f0f2f4;
 	padding: 8rem 14rem;
@@ -563,7 +563,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
-	border-radius: 3px;
+	border-radius: 12px;
 	border: 2px solid #c4ccd4;
 	position: relative;
 }
@@ -588,7 +588,7 @@ var {
 	font-family: "Fira Code", "Cascadia Code", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	background: #f0f2f4;
 	padding: 3px 5px;
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 h1,
@@ -677,7 +677,7 @@ a:active {
 .screen-reader-text:focus, .site-branding .site-description:focus, .pagination .nav-prev-text:focus,
 .pagination .nav-next-text:focus, .comments-area.is-not-active:focus {
 	background-color: #fff;
-	border-radius: 3px;
+	border-radius: 12px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
@@ -888,7 +888,6 @@ a:active {
 	padding-top: 7px;
 	text-align: left;
 	overflow: hidden;
-	border-radius: 3px;
 	transition: width 1s ease-in-out;
 }
 
@@ -902,6 +901,7 @@ a:active {
 	width: 0;
 	transition: width .3s ease-in-out;
 	padding-left: 5px;
+	border-radius: 12px;
 }
 
 .social-navigation .search-field:focus {
@@ -927,7 +927,7 @@ a:active {
 	display: flex;
 	overflow: hidden;
 	z-index: 999;
-	border-radius: 3px;
+	border-radius: 12px;
 	background: #373a47;
 	color: #fff;
 	font-size: 16px;
@@ -981,7 +981,7 @@ a:active {
 	padding: 1em;
 	background: #f0f2f4;
 	color: #777;
-	border-radius: 3px;
+	border-radius: 12px;
 	border: 1px solid #a9b4c0;
 	margin: 0 1em;
 }
@@ -1014,12 +1014,12 @@ a:active {
 .pagination .current {
 	background: #dd514c;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 .pagination a {
 	color: #222;
-	border-radius: 3px;
+	border-radius: 12px;
 	width: 30px;
 	height: 30px;
 }
@@ -1083,12 +1083,12 @@ a:active {
 .page-links .current {
 	background: #dd514c;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 .page-links a {
 	color: #222;
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 .page-links a:hover {
@@ -1158,7 +1158,7 @@ a:active {
 	width: 32px;
 	height: 4px;
 	background-color: #fff;
-	border-radius: 4px;
+	border-radius: 12px;
 	position: absolute;
 	transition-property: transform;
 	transition-duration: 0.15s;
@@ -2126,6 +2126,7 @@ a:active {
 	position: relative;
 	z-index: -2;
 	background: #fff;
+	border-radius: 12px;
 }
 
 .has-sidebar .site-content {
@@ -2297,7 +2298,7 @@ a:active {
 	font-weight: bold;
 	font-size: 11rem;
 	padding: 3px 5px;
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 .edit-link a:hover {
@@ -2312,7 +2313,7 @@ a:active {
 	padding: 1em;
 	background: #f0f2f4;
 	margin: 0 1em 1em 1em;
-	border-radius: 3px;
+	border-radius: 12px;
 	border: 1px solid #a9b4c0;
 }
 
@@ -2394,7 +2395,7 @@ a:active {
 	border: 1px solid #a9b4c0;
 	margin: 1em;
 	padding: 0;
-	border-radius: 3px;
+	border-radius: 12px;
 	box-shadow: 0 0 10px rgba(62, 70, 79, 0.22);
 	overflow: hidden;
 }
@@ -2421,6 +2422,8 @@ a:active {
 	object-fit: cover;
 	height: 220px;
 	width: 100%;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
 }
 
 .site-main .template-summary .post-thumbnail-container .no-thumbnail {
@@ -2804,7 +2807,7 @@ a:active {
 	padding: 0.5em 1em;
 	border: 2px solid #dd514c;
 	background: #dd514c;
-	border-radius: 3px;
+	border-radius: 12px;
 	color: #fff;
 	display: block;
 	margin: 1.5em auto;
@@ -2850,7 +2853,7 @@ a:active {
 }
 
 .comment-author .avatar {
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 .comment-content {
@@ -2893,7 +2896,7 @@ a:active {
 	color: #fff;
 	font-weight: bold;
 	margin-right: auto;
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 .reply a:hover {
@@ -2929,7 +2932,7 @@ a:active {
 .logged-in-as {
 	background: lightyellow;
 	padding: 0.75em;
-	border-radius: 5px;
+	border-radius: 12px;
 	font-size: 14rem;
 	border: 3px solid yellow;
 }

@@ -52,7 +52,7 @@ class Theme {
 					),
 				)
 			)
-			->add_style( 'styles', get_stylesheet_uri(), array(), 'v1.0.0' )
+			->add_style( 'styles', get_stylesheet_uri(), array(), 'v1.0.0' . rand(0, 1000) )
 			->add_comment_script()
 			->pingback();
 	}

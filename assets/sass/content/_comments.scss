@@ -22,7 +22,7 @@
 	padding: 0.5em 1em;
 	border: 2px solid $red;
 	background: $red;
-	border-radius: 3px;
+	border-radius: $border__radius;
 	color: $white;
 	display: block;
 	margin: 1.5em auto;
@@ -71,7 +71,7 @@
 
 .comment-author {
 	.avatar {
-		border-radius: 3px;
+		border-radius: $border__radius;
 	}
 }
 
@@ -116,7 +116,7 @@
 		color: #fff;
 		font-weight: bold;
 		margin-left: auto;
-		border-radius: 3px;
+		border-radius: $border__radius;
 
 		&:hover {
 			background: $red;
@@ -162,7 +162,7 @@
 .logged-in-as {
 	background: lightyellow;
 	padding: 0.75em;
-	border-radius: 5px;
+	border-radius: $border__radius;
 	font-size: 14rem;
 	border: 3px solid $yellow;
 }
