@@ -134,7 +134,6 @@
 		padding-top: 7px;
 		text-align: right;
 		overflow: hidden;
-		border-radius: 3px;
 		transition: width 1s ease-in-out;
 	}
 	
@@ -149,6 +148,7 @@
 		width: 0;
 		transition: width .3s ease-in-out;
 		padding-right: 5px;
+		border-radius: $border__radius;
 
 		&:focus {
 			width: 200px;
@@ -177,7 +177,7 @@
 	display: flex;
 	overflow: hidden;
 	z-index: 999;
-	border-radius: 3px;
+	border-radius: $border__radius;
 	background: $darkerblue;
 	color: #fff;
 	font-size: 16px;
@@ -232,7 +232,7 @@
 			padding: 1em;
 			background: $lightgrey;
 			color: #777;
-			border-radius: 3px;
+			border-radius: $border__radius;
 			border: 1px solid $grey;
 			margin: 0 1em;
 
@@ -267,12 +267,12 @@
 	.current {
 		background: $red;
 		color: $white;
-		border-radius: 3px;
+		border-radius: $border__radius;
 	}
 
 	a {
 		color: $black;
-		border-radius: 3px;
+		border-radius: $border__radius;
 		width: 30px;
 		height: 30px;
 
@@ -340,12 +340,12 @@
 	.current {
 		background: $red;
 		color: $white;
-		border-radius: 3px;
+		border-radius: $border__radius;
 	}
 
 	a {
 		color: $black;
-		border-radius: 3px;
+		border-radius: $border__radius;
 
 		&:hover {
 			color: $red;

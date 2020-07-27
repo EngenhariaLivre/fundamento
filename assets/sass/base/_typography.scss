@@ -14,7 +14,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
-	border-radius: 3px;
+	border-radius: $border__radius;
 	border: 2px solid darken($lightgrey, 15%);
 	position: relative;
 
@@ -40,7 +40,7 @@ var {
 	// @include font-size(0.9375);
 	background: $color__background-pre;
 	padding: 3px 5px;
-	border-radius: 3px;
+	border-radius: $border__radius;
 }
 
 h1,

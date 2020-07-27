@@ -95,7 +95,7 @@ blockquote {
 	background: $lightgrey;
 	margin: 0;
 	padding: 1em 1em 1em 2.3em;
-	border-radius: 3px;
+	border-radius: $border__radius;
 	position: relative;
 
 	&::before,

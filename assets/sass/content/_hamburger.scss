@@ -60,7 +60,7 @@
 	width: 32px;
 	height: 4px;
 	background-color: #fff;
-	border-radius: 4px;
+	border-radius: $border__radius;
 	position: absolute;
 	transition-property: transform;
 	transition-duration: 0.15s;

@@ -11,7 +11,7 @@ textarea {
 	color: $input__color;
 	border: 2px solid;
 	border-color: $input__border;
-	border-radius: 3px;
+	border-radius: $border__radius;
 	font-size: 14rem;
 	background: $input__background;
 	padding: 8rem 14rem;
